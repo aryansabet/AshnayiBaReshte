@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>آشنایی با رشته و مهارت های دانشجویی</title>
+    <!--styles & css-->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <!--font awesome icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <style>
+        /* font from google fonts
+
+https://fonts.google.com/?preview.size=64&preview.layout=row&selection.family=Markazi+Text:wght@400;500;600;700|Quicksand:wght@300;400;500;600;700&category=Serif,Sans+Serif&query=quick
+*/
+        
+        @import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+        /*
+font-family: 'Markazi Text', serif;
+font-family: 'Quicksand', sans-serif;
+*/
+        
+         :root {
+            --dark: #3c393d;
+            --exDark: #2b2b2b;
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            line-height: 1.4;
+            color: var(--dark);
+            direction: rtl;
+            font-family: "Markazi Text", serif;
+        }
+        
+        img {
+            width: 100%;
+            display: block;
+        }
+        /*ssss*/
+        
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 1.2rem;
+        }
+        /*header*/
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+        }
+        
+        .backreg {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/banner-bg.jpg) center/cover no-repeat fixed;
+        }
+        
+        .navbar {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.2rem;
+        }
+        
+        .navbar-brand {
+            color: #fff;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .navbar-nav {
+            padding: 0.8rem 0 0.2rem 0;
+            text-align: center;
+        }
+        
+        .navbar-nav a {
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.4rem 0.1rem;
+            transition: opacity 0.5s ease;
+        }
+        
+        .navbar-nav a:hover {
+            opacity: 0.7;
+        }
+        
+        .banner {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .banner-title {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        
+        .banner-title span {
+            color: var(--exDark);
+        }
+        
+        .banner p {
+            padding: 1rem 0 2rem 0;
+            font-size: 1.2rem;
+            font-weight: 300;
+            word-spacing: 2px;
+        }
+        
+        .letsgobtn {
+            width: auto;
+            padding-inline: 5 px;
+            font-size: 1.1rem;
+            color: #fff;
+            border: none;
+            background: transparent;
+            outline: 0;
+            cursor: pointer;
+        }
+        /*blog post header*/
+        
+        .avbar {
+            background: rgb(255, 255, 255);
+            padding: 1.2rem;
+        }
+        
+        .avbar-brand {
+            color: blue;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .avbar-brand:hover {
+            opacity: 0.7;
+            color: blue;
+        }
+        
+        .avbar-nav {
+            padding: 0.8rem 0 0.2rem 0;
+            text-align: center;
+        }
+        
+        .avbar-nav a {
+            font-weight: 500;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            display: inline-block;
+            padding: 1rem 0.5rem;
+            transition: opacity 0.5s ease;
+        }
+        
+        .avbar-nav a:hover {
+            opacity: 0.7;
+            color: blue;
+        }
+        /*end of blog post header*/
+        /* side bar*/
+        
+        .card-container h3 {
+            margin: 10px;
+            font-size: 18px;
+        }
+        
+        .card-container h6 {
+            margin: 5px;
+            font-size: 18px;
+        }
+        
+        .card-container p {
+            line-height: 21px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .card-container {
+            box-sizing: border-box;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+            color: var(--dark);
+            padding-top: 30px;
+            position: relative;
+            width: 350px;
+            max-width: 100%;
+            text-align: center;
+        }
+        
+        .card-container .pro {
+            color: white;
+            background-color: #5c0086;
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 3px 7px;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        
+        button.primary {
+            background-color: rgba(0, 0, 255, 0.747);
+            border: 1px solid rgba(0, 0, 255, 0.747);
+            border-radius: 3px;
+            color: white;
+            font-size: 16px;
+            padding: 10px 25px;
+            margin: 5px;
+        }
+        
+        button.primary.ghost {
+            background-color: transparent;
+            color: blue;
+        }
+        
+        .skills {
+            font-family: 'Quicksand', sans-serif;
+            background-color: rgba(0, 0, 255, 0.747);
+            text-align: left;
+            padding: 15px;
+            margin-top: 30px;
+            color: white;
+        }
+        
+        .skills ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .skills ul li {
+            border: 1px solid #ffffff;
+            border-radius: 2px;
+            display: inline-block;
+            font-size: 12px;
+            margin: 0 7px 7px 0;
+            padding: 7px;
+        }
+        /* side bar*/
+        /*blog post banner*/
+        
+        .b-banner {
+            padding: 7%;
+            min-height: 10vh;
+            background-color: rgb(0, 0, 0, 80%);
+            flex: 1;
+            display: flex;
+            color: #fff;
+        }
+        
+        .b-banner-title {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        /*end of blog post banner*/
+        /* blog */
+        
+        .blog {
+            background: #f9f9f9;
+            padding: 4.5rem 0;
+        }
+        
+        .blog-content {
+            margin: 2rem 0;
+        }
+        
+        .blog-img {
+            position: relative;
+        }
+        
+        .blog-img span {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--exDark);
+            color: #fff;
+            font-size: 1.4rem;
+            padding: 0.3rem 0.6rem;
+        }
+        
+        .blog-text {
+            margin: 2.2rem 0;
+            padding: 0 1rem;
+        }
+        
+        .blog-text span {
+            font-weight: 300;
+            display: block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .blog-text h2 {
+            padding: 1rem 0;
+            font-size: 1.65rem;
+            font-weight: 500;
+        }
+        
+        .blog-text p {
+            font-weight: 300;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            padding-bottom: 1.2rem;
+        }
+        
+        .blog-text a {
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: var(--dark);
+            display: inline-block;
+            background: var(--dark);
+            color: #fff;
+            padding: 0.55rem 1.2rem;
+            transition: all 0.5s ease;
+        }
+        
+        .blog-text a:hover {
+            background: var(--exDark);
+        }
+        /*end of blog*/
+        /* about */
+        
+        .about {
+            padding: 4.5rem 0;
+        }
+        
+        .about-text {
+            margin: 2rem 0;
+        }
+        
+        .about-text>p {
+            font-size: 1.1rem;
+            padding: 0.6rem 0;
+            opacity: 0.8;
+        }
+        /* footer */
+        
+        footer {
+            background: var(--exDark);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .bbback {
+            background: rgba(0, 0, 255, 0.774);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.4rem;
+        }
+        
+        .social-links a {
+            border: 2px solid #fff;
+            color: #fff;
+            display: block;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            margin: 0 0.3rem;
+            transition: all 0.5s ease;
+        }
+        
+        .social-links a:hover {
+            background: #fff;
+            color: var(--exDark);
+        }
+        
+        .footer span {
+            margin-top: 1rem;
+            display: block;
+            letter-spacing: 2px;
+        }
+        /*blog post  griddy.io*/
+        
+        .blog-post {
+            display: grid;
+            grid-template-columns: 5fr 2fr;
+            grid-template-rows: 1fr;
+            grid-column-gap: 100px;
+            grid-row-gap: 50px;
+            justify-items: stretch;
+            align-items: stretch;
+        }
+        /*blog post*/
+        /* Media Queries */
+        
+        @media screen and (min-width: 540px) {
+            .navbar-nav a {
+                padding-right: 1.2rem;
+                padding-left: 1.2rem;
+            }
+            .avbar-nav a {
+                padding-right: 1.2rem;
+                padding-left: 1.2rem;
+            }
+            .banner-title {
+                font-size: 5rem;
+            }
+            .banner form {
+                margin-top: 1.4rem;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        @media screen and (min-width: 768px) {
+            .navbar .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .avbar .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .blog-content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        @media screen and (min-width: 992px) {
+            .blog-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .about-content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 3rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="avbar">
+            <div class="container">
+                <div>
+                    <a href="index.html" class="avbar-brand">آشنایی با رشته</a>
+                </div>
+
+                <div class="avbar-nav">
+                    <a href="index.html">خانه</a>
+                    <a href="index.html#blog">مطالب</a>
+                    <a href="index.html#about">چند رسانه ای</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <hr />
+    <!--blog banner-->
+    <div class="b-banner" style="
+        background: linear-gradient(rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.671)),
+          url(images/work.jpg) center/cover no-repeat;
+      ">
+        <div class="container">
+            <h2 class="b-banner-title">بازار کار رشته کامپیوتر</h2>
+        </div>
+    </div>
+    <!--blog banner ends-->
+    <!--blog post-->
+
+    <!-- about -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="blog-post" style="min-height: 63vh">
+                <!--post started (grid/flexbox)-->
+                <div class="about-text">
+                    <!-- <div class="title">
+                        <h2>لورم ایپسوم</h2>
+                        <p>لورم لورم لورم</p>
+                    </div> -->
+                    <p style="text-align:right"> بازار کار رشته مهندسی کامپیوتر به شدت به مهارت و تخصص شخص ارتباط داره و متاسفانه این مهارت هارو در هیچ درس دانشگاهی پیدا نمی&zwnj;کنید و به همین دلیل اگر کسی صرفن دروس این رشته رو پاس کرده باشه و امید به پیدا کردن کار مرتبط با رشتش
+                        داشته باشه، هیچوقت به نتیجه نمیرسه و بیکار میمونه و یا مشغول به یک کار بی&zwnj;ربط میشه و تمام اون ۴ سال از عمرش رو بیهوده هدر داده! نکته جالبی که میخوام بگم اینه که شاید رشته مهندسی&zwnj;کامپیوتر و به&zwnj;ویژه برنامه&zwnj;نویسی
+                        بیشترین آمار جذب نیرو با حقوق&zwnj; و مزایای بسیار مناسب&nbsp;رو داره که برای اثبات این حرف میتونین سری به اینجا(
+                        <a href="https://jobinja.ir/" style="color:#0563c1; text-decoration:underline" target="_blank"> <span style="color:#107abe">+  
+                   
+                  </a>
+                      ) بزنین و   
+
+
+
+                        آگهی&zwnj;های استخدام برنامه&zwnj;نویس در شرکت&zwnj;های مختلف رو ببینید. اما مشکلی که این شرکت&zwnj;ها دارن نبود نیروی   
+                   
+                   
+
+                        متخصص و فنی هستش. بعضی از این آگهی&zwnj;ها برای مدت   
+                      ۶  
+                      ماه تا یکسال در این سایت هستند و هنوز شخص   
+
+                        مناسب که مهارت&zwnj;های&nbsp;مرتبط با اون موقعیت شغلی داشته باشه رو پیدا نکردن.  
+                   
+                   
+
+              </p>
+
+              <p style="text-align:right">     این مورد بالا رو گفتم تا درک بهتری از آینده این رشته و بازار کارش ارائه داده باشم و در نهایت   
+                   
+                   
+
+                        تصمیم&zwnj;گیری و انتخاب مسیر با خود شماست.  
+                   
+                   
+
+              </p>
+
+              <p style="text-align:right"> <span style="font-size:12.0pt"> این رو هم بدونید که برای رسیدن به موفقیت به اندازه تمام انسان&zwnj;های روی کره&zwnj;زمین راه وجود داره و هیچ دستورالعمل   
+                   
+
+                    <span style="font-size:12.0pt"> مشخص و تضمینی برای موفقیت وجود نداره.  
+                   
+
+                     خوب حالا بریم سراغ آینده شغلی این رشته. فقط باید این رو اضافه کنم که از اون جا که در رشته های فارسی حرفی در مورد   
+                    آینده شغلی رشته گفته نشده است بخاطر همین هم از منابع خارجی برای تکمیل این لیست استفاده کردم.  
+
+              </p>
+
+              <h3 style="text-align:right"> هوش مصنوعی  (AI) / ماشین لرنینگ (machine learning)  
+                   
+              </h3>
+
+              <p style="text-align:right">  میزان رشد در سال های  (2015-2018) : %344 
+
+              </p>
+
+              <p style="text-align:right">  از جمله دلایل رشد این شغل به دلیل تغییر رویۀ صنعت تکنولوژی و تمرکز کردن بر روی ادغام کردن و ترکیب کردن بخش   
+                    های مختلف زندگی با ماشین است. همچنین پیشبینی های شغلی دربارۀ آینده این شغل نشان دهنده رشد صعودی این شغل می   
+                    باشد. 
+
+              </p>
+
+              <p style="text-align:right">  مهندسان مشغول در این حوزه بیشتر با اطلاعات و دیتا های زیاد سر و کار دارند و این وظیفه را به عهده دارند که مدل هایی  
+                     را تمرین دهند که به طریقه پیشرفت و تکامل زبان های طبیعی، پیشبینی های اقتصادی، و تشخیص چهره و خیلی موارد دیگر  
+                     کمک کنند. 
+
+              </p>
+
+              <p style="text-align:right">  از دیگر حوزه هایی که هوش مصنوعی در آن دست دارد اینترنت اشیا  (internet of things) می باشد. که همین هم باعث به  
+
+                     وجود آمدن رشتۀ جدیدی به نام  (Artificial Intelligence of Things) شده است، که توجه های بسیاری را در سراسر جهان به  
+
+                     خودش جلب کرده است. 
+
+              </p>
+
+              <p style="text-align:right">  ریاضی در این گرایش حرف اول را می زند و به طور مستقیم نیاز به محاسبات جبری پیدا می کنید پس برای این گرایش باید   
+                    تمام مشکلات خود را با ریاضی حل کنید و همین طور ریاضیات گسسته ، آمار و احتمال بسیار مهم هستند پس این درس ها را   
+                     در دانشگاه پشت گوش نیندازید. 
+
+              </p>
+
+              <h3 style="text-align:right"> علم داده (data science)  
+                   
+              </h3>
+
+              <p style="text-align:right">  میزان رشد در سال های (2018-2028) : %15 (بیشتر از میاگین جهانی) 
+
+              </p>
+
+              <p style="text-align:right">  با توجه به افزایش روز افزون اطلاعات تولید شده در سازمان ها و اقتصاد های گوناگون، دلیل اهمیت این شغل را نشان می   
+                    دهد.  
+                     مهندسان مشغول در این حوزه، وقت کاری خود را صرف کامپایل کردن، تمیزکردن و به نمایش گذاشتن این اطلاعات و دیتا ها   
+                     میکنند تا اینکه مدیران سازمان ها بتوانند تصمیمات خود را آگاهانه بگیرند. تعداد شانس های شغلی در این حرفه بسیار زیاد است   
+                     و هیچ نشانه ای از کاهش این تعداد وجود ندارد. طبق پیشبینی های انجام شده توسط  glassdoor ، دیتا ساینس یکی از شغل های  
+                   
+                     برتر است که علاوه بر درآمد نسبتا بالا، رضایت شاغلان این حرفه را هم به دنبال دارد.  
+                   
+              </p>
+
+              <p style="text-align:right">  مهارت های لازم برای این حوزه:  
+                   
+              </p>
+
+              <p style="margin-left:25px; text-align:right">  <span style="font-size:11.5pt">  ریاضیات (ریاضیات گسسته و مهندسی, محاسبات عددی و علم آمار)  
+                   
+                   
+
+              </p>
+
+              <p style="margin-left:25px; text-align:right">  <span style="font-size:11.5pt">  علوم کامپیوتر (پایگاه داده ها, برنامه نویسی طراحی و تحلیل الگوریتم ها, هوش مصنوعی و یادگیری ماشین)  
+                   
+                   
+
+
+              </p>
+
+              <p style="margin-left:25px; text-align:right">  <span style="font-size:11.5pt">  مهارتهایی در مورد فیلد هدف (مانند کسب و کار یا پزشکی و یا حوزه های دیگر)  
+                   
+                   
+
+              </p>
+
+               
+
+              <h3 style="text-align:right"> امنیت اطلاعات  (information security) 
+
+              </h3>
+
+              <p style="text-align:right">  میزان رشد در سال های  (2018-2028) : %32 &nbsp;(بیشتر از میاگین جهانی) 
+
+              </p>
+
+              <p style="text-align:right">  دنیای اقتصادی امروز در احاطۀ اطلاعات عددی ذخیره شده در کامپیوتر ها است. همین موضوع دلیل اهمیت این شغل را نشان   
+                     میدهد. مهندسان این حرفه در خط مقدم مقابله با حمله های سایبری هستند. این مهندسان از روش های متعددی استفاده می کنند تا   
+                     اینکه بتوانند اطلاعات شخصی یا یک سازمان را امن نگه دارند. البته تمام این راه ها تحت نظر قوانین کشور می باشد. با توجه   
+                     به اطلاعات گردآوری شده توسط  USA Today ، یکی از بالاترین میزان های رضایت از شغل را دارا می باشند. 
+
+              </p>
+
+              <p style="text-align:right">  مهارت های لازم:  
+
+              </p>
+
+              <h3 style="text-align:right"> هک
+
+              </h3>
+
+              <p style="text-align:right">  ویروس ها، کرم ها ، ابزار های جاسوسی و تروجان ها 
+
+              </p>
+
+              <p style="text-align:right">  حملات سرویس ، پر کردن سیستم ها با استفاده از اطلاعات بی استفاده 
+              </p>
+
+              <p style="text-align:right">  هدایت کاربران به سایت های جعلی با استفاده از آدرس های سایت های اصلی 
+
+              </p>
+
+              <p style="text-align:right">  سوء استفاده از مجوز های کاربران  
+
+
+              </p>
+
+              <p style="text-align:right">  مهندس نرم افزار  (software engineering)
+
+              </p>
+
+              <p style="text-align:right">  میزان رشد در سال های  (2018-2028) : %21
+
+              </p>
+
+              <p style="text-align:right">  شاید بشه مهندسی نرم افزار را همه کاره ترین شغل در بین شغل های این لیست دانست. فقط به نرم افزار هایی که در طول روز   
+                     با آن ها مواجه میشید و سرو کارو دارین توجه کنید تا طیف وسیع این شاخه را درک کنید. درحقیقت هر صنعتی، برای انجام   
+                     کار های خود وابسطه به نرم افزار هایی می باشد؛ که همین موضوع نشان میدهد که به این زودی ها تعداد شاغلان در این رشته   
+                     قرار نیست که کاهش یابد. طبق اطلاعات درج شده در سایت  glassdoor میانگین درآمد سالیانه مهندسان حرفه ای در این شغل
+
+                     حدود 134 هزار دلار در سال است. 
+
+              </p>
+
+              <h3 style="text-align:right"> محقق علوم کامپیوتر (Computer Research Scientist)
+
+              </h3>
+
+              <p style="text-align:right">  میزان رشد در سال های  (2018 &ndash; 2028) : %16 
+                   
+              </p>
+
+              <p style="text-align:right">  یکی از پر رونق ترین شغل های مرتبط کامپیوتر و تکنولوژی تحقیق در مورد علوم کامپیوتر می باشد. شاغلان این حوزه علت   
+                     بسیاری از نوآوری های وابسته به تکنولوژی می باشند. در حقیقت، این افراد متخصصانی هستند، که با استفاده از علوم   
+                     گردآوری شده، مشکلات موجود در حوزه کامپیوتر را رفع می کنند و راه هایی برای به دست آوردن راه حل هایی برای مسائل   
+                     پیچیده ارائه می دهند.  
+                     طبق داده های  BLS ، چشم انداز این حرفه فوق العاده است ، به طوری که تعداد شانس های شغلی این حرفه ازمقدار میانگین  
+                   
+                     جهانی بسیار بیشتر است.  
+                   
+              </p>
+
+              <h3 style="text-align:right">تحلیلگر داده (Data Analyst)
+                   
+              </h3>
+
+              <p style="text-align:right">  میزان رشد در سال های  (2018-2028) : %16 
+                   
+              </p>
+
+              <p style="text-align:right">  در دنیای مدرن امروزی، دیتا و &nbsp;داده همانند پادشاهی در حال حکمرانی اند و در هر جایی حرف اول را می زنند. همین   
+                     موضوع باعث شده است که شرکت ها همواره به دنبال افرادی با قابلیت آنالیز و تحلیل اطلاعات و دیتا باشند.  
+                     این افراد باید قابلیت تقسیر داده را داشته باشند. آن ها باید از صحت داده اطمینان حاصل کنند و بهترین راه ها برای استفاده از   
+                     آن داده را بیابند. اگر چه تحلیلگران داده از رشد روزافزون هوش مصنوعی نگران اند که نکند هوش مصنوعی جای آن ها را   
+                     در تحلیل داده بگیرد اما با این حال این شاغلان آینده خوبی در بازار کار دارند.  
+                   
+              </p>
+
+              <p style="text-align:right">  مهارت های لازم:  
+                   
+              </p>
+
+              <p style="margin-left:15px; text-align:right">   دانش فنی و نرم افزاری  
+                  (PYTHON &amp; R)   برای پاکسازی&nbsp;و سازماندهی داده های خام  
+                   
+                   
+                   
+              </p>
+
+              <p style="margin-left:15px; text-align:right">   دانش آماری برای استفاده از آمارهای توصیفی برای بدست آوردن یک تصویر بزرگ  
+                   
+                   
+                   
+              </p>
+
+              <p style="margin-left:15px; text-align:right">   تفکر انتقادی و تجزیه و تحلیل روند جالب موجود در داده ها  
+                   
+                   
+                   
+              </p>
+
+              <p style="margin-left:15px; text-align:right">   مهارت های تصویرسازی  
+                  <span style="color:#333333">(Data Visualization Skills)     داشبوردسازی داده ها برای کمک به تفسیر شرکت و تصمیم   
+                   
+                   
+                   
+              </p>
+
+              <p style="margin-left:15px; text-align:right">   <span style="color:#333333">گیری با داده  &nbsp;
+                  <span style="color:#333333">مهارت های ارائه   <span style="color:#333333">(Presentation Skills)  
+                  ، برای ارائه نتایج آنالیزهای تکنیکال برای مشتریان خارجی یا تیم  
+                   
+                   
+                   
+                   
+              </p>
+
+              <p style="margin-left:15px; text-align:right">   <span style="color:#333333">های داخلی  
+                   
+                   
+                   
+              </p>
+
+              <h3 style="text-align:right"> مهندس IT
+              </h3>
+
+              <p style="text-align:right">  میزان رشد در سال های  (2018-2028) : %11 
+                   
+              </p>
+
+              <p style="text-align:right">  یکی دیگر از فرصت های شغلی شگفت انگیز در زمینه تکنولوژی، آی  تی می باشد. یک مهندس  
+                  آی  تی  بر روی بخش فناوری  
+                   
+                     اطلاعات یک شرکت تمرکز دارد. این مهندسان هر چیزی که در این بخش انجام می شود را برنامه ریزی و هم آهنگ می کنند.   
+                     این افراد به دنبال راه هایی برای ارتقا سیستم اطلاعات یک شرکت می باشند و معمولا به عنوان مدیر یک گروه فنی انتخاب می   
+                     شوند.  
+                   
+              </p>
+
+              <p style="text-align:right">  مهارت های لازم :  
+                   
+              </p>
+
+              <p style="text-align:right">  طراحی وب سایت  
+                   
+              </p>
+
+              <p style="text-align:right">  مدیریت وب سایت ها  
+                   
+              </p>
+
+              <p style="text-align:right">  توسعه دهنده های دیجتال مارکتینگ  
+                   
+              </p>
+
+              <h3 style="text-align:right">  برنامه نویسی  
+                   
+              </h3>
+
+              <p style="text-align:right">  سرپرست پایگاه داده  (Database Administer) &nbsp; 
+                   
+              </p>
+
+              <p style="text-align:right">  میزان رشد در سال های  (2018-2028) : %9 
+                   
+              </p>
+
+              <p style="text-align:right">  سرپرست پایگاه داده شغلی هم درست همانند تحلیلگران دادده، با حجم زیادی از داده روبه  رو می شوند و به مشتری ها کمک می  
+                   
+                     کنند تا اینکه بتوانند اطلاعات خود را مدیریت کنند. این مهندسان وظیفه نگهداری و حفظ پایگاه های داده را دارند. همچنین این   
+                     وظیفه را دارند که اطمینان حاصل کنند که سیستم های کامپیوتری به موثر ترین و بهینه ترین شیوه در حال کار کردن باشند.  
+                   
+              </p>
+
+              <p style="text-align:right">  توسعه گر وب  (Web Developer)  
+                   
+              </p>
+
+              <p style="text-align:right">  میزان رشد در بین سال های  (2018-2028) : %13 
+                   
+              </p>
+
+              <p style="text-align:right">  توسعه گر وب از زبان های برنامه نویسی، فریم ورک ها و شیوه های مختلف برای طراحی استفاده میکند تا اینکه بتونه یک  
+                     سایت را ایجاد کند و از آن نگهداری بکند. این افراد این مسئولیت را دارند تا اطمینان حاصل کنند که همۀ متون، عکس ها، فیلم   
+                     و هر چیز دیگری که برای ارائه بر روی سایت قرار گرفته است به درستی تمام قرار گرفته باشند. اینترنت حالا حالا ها قرار   
+                     است که بین ما بمونه، و همین هم باعث میشه که نیاز برای وب دولوپر های واجد شرایط بیشتر شود.   
+                     تقاضا برای  Full Stack Developer ها به مراتب بیشتر از سایر  web developer ها می باشد.( Full Stack Developer ،  
+                   
+                     وب دولوپری با توانایی کار با فرانت اند و بک اند می باشد.)  
+                     طبق داده های بر روی سایت  USA today این توسعه گران دارای یکی از بیشترین رضایت های شغلی هستند. 
+                   
+                   
+              </p>
+
+              <p style="text-align:right">  مهارت های لازم:  
+                   
+              </p>
+
+              <p style="text-align:right">  یادگیری  css &nbsp;، html &nbsp; 
+                   
+              </p>
+
+              <p style="text-align:right">  زبان هایی مثل  javascript ،  PHP ....
+                   
+                   
+                   
+              </p>
+
+              <p style="text-align:right">  مدیریت سرور   
+                   
+              </p>
+
+              <p style="text-align:right"> SEO  
+              </p>
+
+              <h3 style="text-align:right"> مهندس سخت افزار (Computer Hardware Engineer)
+              </h3>
+
+              <p style="text-align:right">  میزان رشد در بین سال های  (2018-2028) : %6 
+                   
+                   
+              </p>
+
+              <p style="text-align:right">  مهندسان سخت افزار با طراحی، ساخت و تعمیر مدار های فیزیکی کامپیوتر ها سر و کار دارند. اگر چه در حال حاضر نرم   
+                     افزار ها مشکل و دغدغه اصلی کمپانی های تک می باشد اما با این حال همچنان نیاز به مهندسان سخت افزاری که بتونه سخت   
+                     افزار های مناسب با بازدهی بالا را طراحی کند، احساس می شود. این شغل درآمد نسبتا بالایی هم دارد و برای کسانی که علاقه   
+                     مند به کار های فنی می باشند، شاید جالب به نظر برسد.  
+                   
+              </p>
+
+              <p style="text-align:right">  مهارت های لازم:  
+                   
+              </p>
+
+              <p style="text-align:right">   مهارت های تحلیلی &ndash; به منظور تحلیل دقیق و صحیح الگوریتم های طراحی و امکان طراحی و یا رفع عیب لوازم و قطعات   
+                   
+                      کامپیوتری  
+                   
+                   
+              </p>
+
+              <p style="text-align:right"><span style="font-size:12pt">  <span style="font-size:11.0pt">  خلاقیت -&nbsp; به منظور کشف راهکارهای جدید برای طراحی و ساخت قطعات کارآمد و جدید یا عیب یابی طراح های قبلی و یا   
+                   
+                   
+                   
+                   <span style="font-size:12pt">  <span style="font-size:11.0pt">  تعمیر قطعات معیوب  
+                   
+                   
+                   
+                   
+              </p>
+
+              <p style="text-align:right"><span style="font-size:12pt">  <span style="font-size:11.0pt">  مهارت های تفکر انتقادی -&nbsp; زیرا اشخاصی که دارای چنین نوع تفکری می باشند، از توان زیادی برای مشاهده عیب ها و   
+                   
+                   
+                   
+                   <span style="font-size:12pt">  <span style="font-size:11.0pt">  کاستی ها برخوردارند و در صورت استفاده مناسب و تخصصی از این مهارت می توانند کمک زیادی برای طراحی و ساخت   
+                   
+                   
+                   
+                   
+              </p>
+
+              <p style="text-align:right"><span style="font-size:12pt">  <span style="font-size:11.0pt">  لوازم و قطعات پیچیده و تخصصی با کمترین نقص باشند.  
+                   
+                   
+                   
+                   
+              </p>
+
+              <p style="text-align:right">&nbsp;</p>
+
+              <p style="margin-right:24px; text-align:right">&nbsp;</p>
+                </div>
+                <!--post ended-->
+          <!--side bar(grid/flexbox) -->
+          <div>
+            <div>
+              <div class="card-container"  style="margin-top: 40px;">
+                <span class="pro">نویسنده</span>
+
+                            <h3>کامیار مرادیان</h3>
+                            <h6 style="font-size: 14px">
+                                <i class="fas fa-map-marker-alt"></i> کرج
+                            </h6>
+                            <p>
+                                دانشجوی مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                            </p>
+
+                            <div class="skills">
+                                <h6 style="text-align: right"></h6>
+                            </div>
+                </div>
+                <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                    <span class="pro">تولید محتوا</span>
+
+                    <h3>محمد صادقی پولایی</h3>
+                    <h6 style="font-size: 14px">
+                        <i class="fas fa-map-marker-alt"></i> بابل
+                    </h6>
+                    <p>
+                        دانشجوی مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                    </p>
+
+                    <div class="skills">
+                        <h6 style="text-align: right"></h6>
+                    </div>
+                </div>
+                <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                    <span class="pro">تولید محتوا</span>
+
+                    <h3>امیر علی فرازمند</h3>
+                    <h6 style="font-size: 14px">
+                        <i class="fas fa-map-marker-alt"></i> تهران
+                    </h6>
+                    <p>
+                        دانشجوی مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                    </p>
+
+                    <div class="skills">
+                        <h6 style="text-align: right"></h6>
+                    </div>
+                </div>
+                <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                    <span class="pro">تولید محتوا</span>
+
+                    <h3>آرمین بهروزی</h3>
+                    <h6 style="font-size: 14px">
+                        <i class="fas fa-map-marker-alt"></i> تهران
+                    </h6>
+                    <p>
+                        دانشجوی مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                    </p>
+
+                    <div class="skills">
+                        <h6 style="text-align: right"></h6>
+                    </div>
+                </div>
+                <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                    <span class="pro" style="background-color: aqua; color: black">طراح</span
+                >
+
+                <h3>عرفان ابراهیمی سویز</h3>
+                <h6 style="font-size: 14px">
+                  <i class="fas fa-map-marker-alt"></i> تهران
+                </h6>
+                <p>
+                  دانشجوی رشته کامپیوتر<br />
+                  دانشگاه علم و صنعت ایران
+                </p>
+                <div class="skills">
+                  <h6 style="text-align: right"></h6>
+                </div>
+              </div>
+              <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                <span class="pro" style="background-color: aqua; color: black"
+                  >طراح</span
+                >
+
+                <h3>آرین عبدالهی ثابت نژاد</h3>
+                <h6 style="font-size: 14px">
+                  <i class="fas fa-map-marker-alt"></i> تهران
+                </h6>
+                <p>
+                  دانشجوی رشته کامپیوتر<br />
+                  دانشگاه علم و صنعت ایران
+                </p>
+                <div class="skills">
+                  <h6 style="text-align: right"></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--side bar ended-->
+        </div>
+        </div>
+    </section>
+    <!-- end of about -->
+
+    <!-- footer -->
+    <footer class="bbback">
+        <div class="social-links">
+            <a href="#"><i class="fas fa-paper-plane"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <span>آشنایی با رشته و مهارت های دانشجویی</span>
+                    </footer>
+                    <!-- end of footer -->
+</body>
+
+</html>

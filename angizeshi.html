@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>آشنایی با رشته و مهارت های دانشجویی</title>
+    <!--styles & css-->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <!--font awesome icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <style>
+        /* font from google fonts
+
+https://fonts.google.com/?preview.size=64&preview.layout=row&selection.family=Markazi+Text:wght@400;500;600;700|Quicksand:wght@300;400;500;600;700&category=Serif,Sans+Serif&query=quick
+*/
+        
+        @import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+        /*
+font-family: 'Markazi Text', serif;
+font-family: 'Quicksand', sans-serif;
+*/
+        
+         :root {
+            --dark: #3c393d;
+            --exDark: #2b2b2b;
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            line-height: 1.4;
+            color: var(--dark);
+            direction: rtl;
+            font-family: "Markazi Text", serif;
+        }
+        
+        img {
+            width: 100%;
+            display: block;
+        }
+        /*ssss*/
+        
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 1.2rem;
+        }
+        /*header*/
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+        }
+        
+        .backreg {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/banner-bg.jpg) center/cover no-repeat fixed;
+        }
+        
+        .navbar {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.2rem;
+        }
+        
+        .navbar-brand {
+            color: #fff;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .navbar-nav {
+            padding: 0.8rem 0 0.2rem 0;
+            text-align: center;
+        }
+        
+        .navbar-nav a {
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.4rem 0.1rem;
+            transition: opacity 0.5s ease;
+        }
+        
+        .navbar-nav a:hover {
+            opacity: 0.7;
+        }
+        
+        .banner {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .banner-title {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        
+        .banner-title span {
+            color: var(--exDark);
+        }
+        
+        .banner p {
+            padding: 1rem 0 2rem 0;
+            font-size: 1.2rem;
+            font-weight: 300;
+            word-spacing: 2px;
+        }
+        
+        .letsgobtn {
+            width: auto;
+            padding-inline: 5 px;
+            font-size: 1.1rem;
+            color: #fff;
+            border: none;
+            background: transparent;
+            outline: 0;
+            cursor: pointer;
+        }
+        /*blog post header*/
+        
+        .avbar {
+            background: rgb(255, 255, 255);
+            padding: 1.2rem;
+        }
+        
+        .avbar-brand {
+            color: blue;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .avbar-brand:hover {
+            opacity: 0.7;
+            color: blue;
+        }
+        
+        .avbar-nav {
+            padding: 0.8rem 0 0.2rem 0;
+            text-align: center;
+        }
+        
+        .avbar-nav a {
+            font-weight: 500;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            display: inline-block;
+            padding: 1rem 0.5rem;
+            transition: opacity 0.5s ease;
+        }
+        
+        .avbar-nav a:hover {
+            opacity: 0.7;
+            color: blue;
+        }
+        /*end of blog post header*/
+        /* side bar*/
+        
+        .card-container h3 {
+            margin: 10px;
+            font-size: 18px;
+        }
+        
+        .card-container h6 {
+            margin: 5px;
+            font-size: 18px;
+        }
+        
+        .card-container p {
+            line-height: 21px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .card-container {
+            box-sizing: border-box;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+            color: var(--dark);
+            padding-top: 30px;
+            position: relative;
+            width: 350px;
+            max-width: 100%;
+            text-align: center;
+        }
+        
+        .card-container .pro {
+            color: white;
+            background-color: #5c0086;
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 3px 7px;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        
+        button.primary {
+            background-color: rgba(0, 0, 255, 0.747);
+            border: 1px solid rgba(0, 0, 255, 0.747);
+            border-radius: 3px;
+            color: white;
+            font-size: 16px;
+            padding: 10px 25px;
+            margin: 5px;
+        }
+        
+        button.primary.ghost {
+            background-color: transparent;
+            color: blue;
+        }
+        
+        .skills {
+            font-family: 'Quicksand', sans-serif;
+            background-color: rgba(0, 0, 255, 0.747);
+            text-align: left;
+            padding: 15px;
+            margin-top: 30px;
+            color: white;
+        }
+        
+        .skills ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .skills ul li {
+            border: 1px solid #ffffff;
+            border-radius: 2px;
+            display: inline-block;
+            font-size: 12px;
+            margin: 0 7px 7px 0;
+            padding: 7px;
+        }
+        /* side bar*/
+        /*blog post banner*/
+        
+        .b-banner {
+            padding: 7%;
+            min-height: 10vh;
+            background-color: rgb(0, 0, 0, 80%);
+            flex: 1;
+            display: flex;
+            color: #fff;
+        }
+        
+        .b-banner-title {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        /*end of blog post banner*/
+        /* blog */
+        
+        .blog {
+            background: #f9f9f9;
+            padding: 4.5rem 0;
+        }
+        
+        .blog-content {
+            margin: 2rem 0;
+        }
+        
+        .blog-img {
+            position: relative;
+        }
+        
+        .blog-img span {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--exDark);
+            color: #fff;
+            font-size: 1.4rem;
+            padding: 0.3rem 0.6rem;
+        }
+        
+        .blog-text {
+            margin: 2.2rem 0;
+            padding: 0 1rem;
+        }
+        
+        .blog-text span {
+            font-weight: 300;
+            display: block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .blog-text h2 {
+            padding: 1rem 0;
+            font-size: 1.65rem;
+            font-weight: 500;
+        }
+        
+        .blog-text p {
+            font-weight: 300;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            padding-bottom: 1.2rem;
+        }
+        
+        .blog-text a {
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: var(--dark);
+            display: inline-block;
+            background: var(--dark);
+            color: #fff;
+            padding: 0.55rem 1.2rem;
+            transition: all 0.5s ease;
+        }
+        
+        .blog-text a:hover {
+            background: var(--exDark);
+        }
+        /*end of blog*/
+        /* about */
+        
+        .about {
+            padding: 4.5rem 0;
+        }
+        
+        .about-text {
+            margin: 2rem 0;
+        }
+        
+        .about-text>p {
+            font-size: 1.1rem;
+            padding: 0.6rem 0;
+            opacity: 0.8;
+        }
+        /* footer */
+        
+        footer {
+            background: var(--exDark);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .bbback {
+            background: rgba(0, 0, 255, 0.774);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.4rem;
+        }
+        
+        .social-links a {
+            border: 2px solid #fff;
+            color: #fff;
+            display: block;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            margin: 0 0.3rem;
+            transition: all 0.5s ease;
+        }
+        
+        .social-links a:hover {
+            background: #fff;
+            color: var(--exDark);
+        }
+        
+        .footer span {
+            margin-top: 1rem;
+            display: block;
+            letter-spacing: 2px;
+        }
+        /*blog post  griddy.io*/
+        
+        .blog-post {
+            display: grid;
+            grid-template-columns: 5fr 2fr;
+            grid-template-rows: 1fr;
+            grid-column-gap: 100px;
+            grid-row-gap: 50px;
+            justify-items: stretch;
+            align-items: stretch;
+        }
+        /*blog post*/
+        /* Media Queries */
+        
+        @media screen and (min-width: 540px) {
+            .navbar-nav a {
+                padding-right: 1.2rem;
+                padding-left: 1.2rem;
+            }
+            .avbar-nav a {
+                padding-right: 1.2rem;
+                padding-left: 1.2rem;
+            }
+            .banner-title {
+                font-size: 5rem;
+            }
+            .banner form {
+                margin-top: 1.4rem;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        @media screen and (min-width: 768px) {
+            .navbar .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .avbar .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .blog-content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        @media screen and (min-width: 992px) {
+            .blog-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .about-content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 3rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="avbar">
+            <div class="container">
+                <div>
+                    <a href="index.html" class="avbar-brand">آشنایی با رشته</a>
+                </div>
+
+                <div class="avbar-nav">
+                    <a href="index.html">خانه</a>
+                    <a href="index.html#blog">مطالب</a>
+                    <a href="index.html#about">چند رسانه ای</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <hr />
+    <!--blog banner-->
+    <div class="b-banner" style="
+        background: linear-gradient(rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.671)),
+          url(images/shutterstock_312944546.jpg) center/cover no-repeat;
+      ">
+        <div class="container">
+            <h2 class="b-banner-title">انگیزشی</h2>
+        </div>
+    </div>
+    <!--blog banner ends-->
+    <!--blog post-->
+
+    <!-- about -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="blog-post" style="min-height: 63vh">
+                <!--post started (grid/flexbox)-->
+                <div class="about-text">
+                    <!-- <div class="title">
+                        <h2>لورم ایپسوم</h2>
+                        <p>لورم لورم لورم</p>
+                    </div> -->
+                    <h3 style="text-align:right"> تو در برابر تو
+
+
+                    </h3>
+
+                    <p style="text-align:right">&nbsp;</p>
+
+                    <p style="text-align:right"> مردم همیشه یک کابوس تکراری دارند، توی این کابوس یک چیزی، یک نیرویی آن ها رو نگه داشته و مانع حرکت آن ها میشه، توی این شرایط نمیتونند از دستش خلاص بشند، هر چقدر هم که تلاش بکنند باز هم نمیتونند از آن نیرو راحت شوند. خب من اینجا هستم
+                        که به شما بگم، این چیز، این نیرو که شما را از حرکت باز میداره و هی شما رو به عقبگرد وا میداره، چیزی جز خود شما نیست.
+
+
+                    </p>
+
+                    <p style="text-align:right"> توی این دنیا دو مدل آدم در برابر زندگی و تمام اتفاقات آن وجود دارد، دستۀ اول اونایی هستند که همیشه دنیا رو مقصر می دونند، دستۀ دوم کسایی اند که مدام از خودشون می پرسند که چه چیزی را باید متفاوت انجام بدهند. این خیلی راحت تر و راضی
+                        کننده تر است که بیاید و دیگران را برای هر اتفاق ناخوشایندی که براتون میوفته مقصر بدونید. میدونید که چه چیز خنده داری توی این موضوع هست؟ این که ما میخوایم بقیه بیان و برای ما قول یک زندگی خوب رو بدهند، در حالی که خود ما همچین قولی
+                        به خودمون نمی دیم. و این مشکل یک سری از ما است، همیشه دنبال یک نفر برای اینکه همۀ تقصیر ها را گردن او بندازیم.
+
+
+                    </p>
+
+                    <p style="text-align:right"> همۀ ما نیاز داریم که به خودمون توضیح بدیم. بریم جلوی آینه بایستیم و از خودمون بپرسیم &laquo;چرا از حد اکثر توانت استفاده نمیکنی؟ کجای کار رو اشتباه رفتی؟&raquo; شما باید به خودتون بگید که من بهت مدیونم.
+
+
+                    </p>
+
+                    <p style="text-align:right"> هر روز تقاضای خودتون رو از خودتون بیشتر کنید بیشتر از حدی که هر انسان دیگه ای بتونه اون رو انجام بده، با اینکار با بقیه رقابت نمی کنید، در حقیقت با اینکار توانایی های خودتون رو به چالش می کشید و به رقابت میپردازید. چالش و حریف شماره
+                        یک هر کسی خودش است، همیشه شما در برابر خودتون قرار می گیرید. هر روز صبح که از خواب بیدار میشید سعی کنید که در منظم ترین شکل خود در این روز قرار بگیرید، به طور مداوم به تمرین بپردازید، چرا که همین چیزا هست که برای شما موفقیت در
+                        پی داره. هیچ استاد یا مربی ای نمیتونه برای شما موفقیت به ارمغان بیاره این خود شما هستید که باید تصمیم بگیرید و به اون موفقیت دست یابید. هیچ بهونه ای وجود نداره که از حداکثر توانمون استفاده نکنیم تا به اون زندگی مد نظرمون برسیم.
+                        هیچ بهونه ای.
+
+
+                    </p>
+
+                    <p style="text-align:right"> برای موفقیت باید از نقش یک آدم همیشه قربانی خارج شیم و خودمون رو تغییر بدیم. باید این عادتمون رو حذف کنیم که همش منتظر این هستیم که زندگی یک اتفاق خوب برای من رقم بزنه، به خومون بگیم که من قراره سخت کار کنم، برای زندگیم بجنگم، از اشتباهاتم
+                        درس بگیرم و رو به جلو حرکت کنم. هر روز همۀ کار ها رو تخت قدرت خودم انجام میدم تا اینکه به یک برنده تبدیل بشم نه یک قربانی. چرا؟ چون همۀ ما موفقیت و زندگی بهتر را به خودمون بدهکار هستیم، و توی این مسیر هیچکس جز خودمون و افکارمون
+                        نمیتونه جلوی ما رو بگیره.
+
+
+                    </p>
+
+
+
+                    <h3 style="text-align:right"> چرا شکست میخوریم؟
+
+
+                    </h3>
+                    <p style="text-align:right"> بذارید یک چیزی بهتون بگم که احتمالا تا الآن همتون فهمیدید. دنیا همیشه زیبا با طلوع خورشید و رنگین کمان نیست، دنیا بدجنس و گول زننده هست. و اصلا براش مهم نیست که چه اندازه سرسختی، اگه بهش لحظه ای امان بدی، بهت جوری ضربه میزنه که به
+                        زانو بیندازدت و همونجا نگت میداره. تو، من یا هرکس دیگه ای نمیتونه به سختی زندگی ضربه بزنه. اما اینجا مسئله ضربه خوردن نیست، بلکه مسئله اینه که چه اندازه میتونی ضربه بخوری و ولی بتونی تحملش کنی و باز هم سرتو بالا بگیری و به زندگیت
+                        ادامه بدی. و این چیزی هست که برای برنده شدن لازم داری.
+
+
+                    </p>
+
+                    <p style="text-align:right"> درد یک حس موقته، ممکنه برای یک ساعت، یک روز، یک ماه، یا حتی یک سال باقی بمونه؛ اما در پایان کنار می کشه و یک چیز دیگه جاشو میگیره، اما اگر از کار و تلاشمون منصرف بشیم و کنار بکشیم این حس برای همیشه برای همیشه در وجودمون باقی می مونه
+                        .
+
+
+                    </p>
+
+                    <p style="text-align:right"> حد خطا در کار هامون خیلی کوچک است. یعنی ممکنه &nbsp;بخاطر یک ثانیه یا قدم که زودتر یا دیرتر کاری را انجام دادیم، نتونیم به هدفمون برسیم. حد گام هایی که نیاز داریم تا به هدف برسیم در همه جا اطراف ما هستند. هر دقیقه و هر لحظه ای ممکن
+                        هست که در اطرافمون پیدا بشند.
+
+
+                    </p>
+
+                    <p style="text-align:right"> وقتی آرزویی داری باید ازش محافظت کنی. چرا که وقتی که مردم، قادر به انجام دادن کاری نیستند و نمیتونند اون رو انجام بدن مدام توی گوشت میخونند که تو هم نمیتونی اینکار رو انجام بدی. تو این بین تنها کاری که میتونی انجام بدی اینه که هیچوقت
+                        ناامید نشی و پاپس نکشی، و هر وقت چیزی میخوای فقط برو و اون رو بدست بیار.
+
+
+                    </p>
+
+                    <p style="text-align:right"> اگر هم در چند تلاش اولت شکست خوردی، نترس. زندگی که همیشه بردن نیست. اما هیچوقت دست از تصمیم گرفتن برندار، چرا که باید باور داشته باشی که سرانجام اون چیزی که میخوای اتفاق میوفته. و این رو بدون که هم اون کسی که میگه من میتونم و هم کسی
+                        که میگه من نمیتونم جفتشون دارند حقیقت رو میگن.
+
+
+                    </p>
+
+                    <p style="text-align:right"> باید به اعماق وجودتون برید و از خودتون بپرسید که میخوای در آینده چه کسی بشی و چه چیز هست که از همه بیشتر خوشحالت میکنه. هر چقد هم که ممکن هست برای بقیه دیوانه وار و مسخره به نظر بیاد، فقط تصمیمتو بگیر که قراره در آینده چه کسی بشی و
+                        چجوری قراره تبدیل به شخص مدنظرت بشی. باید هر لحظه آمادگی این رو داشته باشیم که خود الآنمون رو فدای شخصی که قراره در آینده بهش تبدیل بشیم بکنیم.
+
+
+                    </p>
+
+                    <p style="text-align:right"> بیشتر ما بخاطر این طعم موفقیت را نمچشیم که هر وقت برامون مشکلی پیش میاد یا ازش خسته میشیم از ادامه دادن آن دست می کشیم. شاید با خودتون بگید که من توی رایضیات وب نیستم خوب کاملا خق باشماست چرا که هنوز اونطور که باید و شاید اون درس رو
+                        مطالعه نکردید.
+
+
+                    </p>
+
+                    <p style="text-align:right"> شاید هم بیاید و بگید که نیاز به استعداد داره و استعداد هم ذاتی هست. اما در اینحا باید به این نکته دقت کنید که استعداد تنها درصد محدودی از نیازهای ما را برای موفقیت مهیا میکنه. اون چیزی که برای موفقیت بسیار اهمیت دارد مهارت است. مهارت
+                        هم که فقط با ساعت ها تمرین و کار سخت بدست میاد.
+
+
+                    </p>
+
+                    <p style="text-align:right"> حالا اگر میدونی که ارزش واقعیت چی هست پس برو و اون چیزی که لیاقتش رو داری را بدست بیار. اما همیشه باید مواظب ضربه هایی که در زندگیت میخوری باشی. هر وقت هم که ضربه خوردی پا پس نکش و ادامه بده چرا که دیگه ضربه رو خوردی و دردشو هم کشیدی
+                        پس باز هم به تلاشت ادامه بده تا مزد تمام زحماتت رو بگیری. و هیچوقت ضربه هایی که میخوری رو گردن بقیه ننداز چون که فقط ترسو ها این کار رو میکنند و تو هم ترسو نیستی. و هیچوقت هم فراموش نکن که چیز هایی که اون هارو محدودیت فرض میکنی
+                        چیزی جز توهم نیستند، درست مثل ترس. پس برو و همین الآن خودت رو به همه نشون بده که چقدر بزرگی!!!
+
+
+                    </p>
+                </div>
+                <!--post ended-->
+                <!--side bar(grid/flexbox) -->
+                <div>
+                    <div>
+                        <div class="card-container" style="margin-top: 40px;">
+                            <span class="pro">تولید محتوا</span>
+
+                            <h3>کامیار مرادیان</h3>
+                            <h6 style="font-size: 14px">
+                                <i class="fas fa-map-marker-alt"></i> کرج
+                            </h6>
+                            <p>
+                                دانشجوی پیگیر مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                            </p>
+
+                            <div class="skills">
+                                <h6 style="text-align: right"></h6>
+                            </div>
+                        </div>
+                        <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                            <span class="pro">تولید محتوا</span>
+
+                            <h3>محمد صادقی پولایی</h3>
+                            <h6 style="font-size: 14px">
+                                <i class="fas fa-map-marker-alt"></i> بابل
+                            </h6>
+                            <p>
+                                دانشجوی شبه خسته مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                            </p>
+
+                            <div class="skills">
+                                <h6 style="text-align: right"></h6>
+                            </div>
+                        </div>
+                        <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                            <span class="pro">تولید محتوا</span>
+
+                            <h3>امیر علی فرازمند</h3>
+                            <h6 style="font-size: 14px">
+                                <i class="fas fa-map-marker-alt"></i> تهران
+                            </h6>
+                            <p>
+                                دانشجوی ظاهرا خسته مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                            </p>
+
+                            <div class="skills">
+                                <h6 style="text-align: right"></h6>
+                            </div>
+                        </div>
+                        <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                            <span class="pro">تولید محتوا</span>
+
+                            <h3>آرمین بهروزی</h3>
+                            <h6 style="font-size: 14px">
+                                <i class="fas fa-map-marker-alt"></i> تهران
+                            </h6>
+                            <p>
+                                دانشجوی خسته مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                            </p>
+
+                            <div class="skills">
+                                <h6 style="text-align: right"></h6>
+                            </div>
+                        </div>
+                        <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                            <span class="pro" style="background-color: aqua; color: black">طراح</span
+                >
+
+                <h3>عرفان ابراهیمی سویز</h3>
+                <h6 style="font-size: 14px">
+                  <i class="fas fa-map-marker-alt"></i> تهران
+                </h6>
+                <p>
+                  دانشجوی رشته کامپیوتر گرایش خستگی<br />
+                  دانشگاه علم و صنعت ایران
+                </p>
+                <div class="skills">
+                  <h6 style="text-align: right"></h6>
+                </div>
+              </div>
+              <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                <span class="pro" style="background-color: aqua; color: black"
+                  >طراح</span
+                >
+
+                <h3>آرین عبدالهی ثابت نژاد</h3>
+                <h6 style="font-size: 14px">
+                  <i class="fas fa-map-marker-alt"></i> تهران
+                </h6>
+                <p>
+                  خسته ترین دانشجوی رشته کامپیوتر<br />
+                  دانشگاه علم و صنعت ایران
+                </p>
+                <div class="skills">
+                  <h6 style="text-align: right"></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--side bar ended-->
+            </div>
+        </div>
+    </section>
+    <!-- end of about -->
+
+    <!-- footer -->
+    <footer class="bbback">
+        <div class="social-links">
+            <a href="#"><i class="fas fa-paper-plane"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <span>آشنایی با رشته و مهارت های دانشجویی</span>
+                            </footer>
+                            <!-- end of footer -->
+</body>
+
+</html>

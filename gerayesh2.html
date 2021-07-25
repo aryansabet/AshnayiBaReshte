@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>آشنایی با رشته و مهارت های دانشجویی</title>
+    <!--styles & css-->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <!--font awesome icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <style>
+        /* font from google fonts
+
+https://fonts.google.com/?preview.size=64&preview.layout=row&selection.family=Markazi+Text:wght@400;500;600;700|Quicksand:wght@300;400;500;600;700&category=Serif,Sans+Serif&query=quick
+*/
+        
+        @import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+        /*
+font-family: 'Markazi Text', serif;
+font-family: 'Quicksand', sans-serif;
+*/
+        
+         :root {
+            --dark: #3c393d;
+            --exDark: #2b2b2b;
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            line-height: 1.4;
+            color: var(--dark);
+            direction: rtl;
+            font-family: "Markazi Text", serif;
+        }
+        
+        img {
+            width: 100%;
+            display: block;
+        }
+        /*ssss*/
+        
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 1.2rem;
+        }
+        /*header*/
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+        }
+        
+        .backreg {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/banner-bg.jpg) center/cover no-repeat fixed;
+        }
+        
+        .navbar {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.2rem;
+        }
+        
+        .navbar-brand {
+            color: #fff;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .navbar-nav {
+            padding: 0.8rem 0 0.2rem 0;
+            text-align: center;
+        }
+        
+        .navbar-nav a {
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.4rem 0.1rem;
+            transition: opacity 0.5s ease;
+        }
+        
+        .navbar-nav a:hover {
+            opacity: 0.7;
+        }
+        
+        .banner {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .banner-title {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        
+        .banner-title span {
+            color: var(--exDark);
+        }
+        
+        .banner p {
+            padding: 1rem 0 2rem 0;
+            font-size: 1.2rem;
+            font-weight: 300;
+            word-spacing: 2px;
+        }
+        
+        .letsgobtn {
+            width: auto;
+            padding-inline: 5 px;
+            font-size: 1.1rem;
+            color: #fff;
+            border: none;
+            background: transparent;
+            outline: 0;
+            cursor: pointer;
+        }
+        /*blog post header*/
+        
+        .avbar {
+            background: rgb(255, 255, 255);
+            padding: 1.2rem;
+        }
+        
+        .avbar-brand {
+            color: blue;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .avbar-brand:hover {
+            opacity: 0.7;
+            color: blue;
+        }
+        
+        .avbar-nav {
+            padding: 0.8rem 0 0.2rem 0;
+            text-align: center;
+        }
+        
+        .avbar-nav a {
+            font-weight: 500;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            display: inline-block;
+            padding: 1rem 0.5rem;
+            transition: opacity 0.5s ease;
+        }
+        
+        .avbar-nav a:hover {
+            opacity: 0.7;
+            color: blue;
+        }
+        /*end of blog post header*/
+        /* side bar*/
+        
+        .card-container h3 {
+            margin: 10px;
+            font-size: 18px;
+        }
+        
+        .card-container h6 {
+            margin: 5px;
+            font-size: 18px;
+        }
+        
+        .card-container p {
+            line-height: 21px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .card-container {
+            box-sizing: border-box;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+            color: var(--dark);
+            padding-top: 30px;
+            position: relative;
+            width: 350px;
+            max-width: 100%;
+            text-align: center;
+        }
+        
+        .card-container .pro {
+            color: white;
+            background-color: #5c0086;
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 3px 7px;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        
+        button.primary {
+            background-color: rgba(0, 0, 255, 0.747);
+            border: 1px solid rgba(0, 0, 255, 0.747);
+            border-radius: 3px;
+            color: white;
+            font-size: 16px;
+            padding: 10px 25px;
+            margin: 5px;
+        }
+        
+        button.primary.ghost {
+            background-color: transparent;
+            color: blue;
+        }
+        
+        .skills {
+            font-family: 'Quicksand', sans-serif;
+            background-color: rgba(0, 0, 255, 0.747);
+            text-align: left;
+            padding: 15px;
+            margin-top: 30px;
+            color: white;
+        }
+        
+        .skills ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .skills ul li {
+            border: 1px solid #ffffff;
+            border-radius: 2px;
+            display: inline-block;
+            font-size: 12px;
+            margin: 0 7px 7px 0;
+            padding: 7px;
+        }
+        /* side bar*/
+        /*blog post banner*/
+        
+        .b-banner {
+            padding: 7%;
+            min-height: 10vh;
+            background-color: rgb(0, 0, 0, 80%);
+            flex: 1;
+            display: flex;
+            color: #fff;
+        }
+        
+        .b-banner-title {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        /*end of blog post banner*/
+        /* blog */
+        
+        .blog {
+            background: #f9f9f9;
+            padding: 4.5rem 0;
+        }
+        
+        .blog-content {
+            margin: 2rem 0;
+        }
+        
+        .blog-img {
+            position: relative;
+        }
+        
+        .blog-img span {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--exDark);
+            color: #fff;
+            font-size: 1.4rem;
+            padding: 0.3rem 0.6rem;
+        }
+        
+        .blog-text {
+            margin: 2.2rem 0;
+            padding: 0 1rem;
+        }
+        
+        .blog-text span {
+            font-weight: 300;
+            display: block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .blog-text h2 {
+            padding: 1rem 0;
+            font-size: 1.65rem;
+            font-weight: 500;
+        }
+        
+        .blog-text p {
+            font-weight: 300;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            padding-bottom: 1.2rem;
+        }
+        
+        .blog-text a {
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: var(--dark);
+            display: inline-block;
+            background: var(--dark);
+            color: #fff;
+            padding: 0.55rem 1.2rem;
+            transition: all 0.5s ease;
+        }
+        
+        .blog-text a:hover {
+            background: var(--exDark);
+        }
+        /*end of blog*/
+        /* about */
+        
+        .about {
+            padding: 4.5rem 0;
+        }
+        
+        .about-text {
+            margin: 2rem 0;
+        }
+        
+        .about-text>p {
+            font-size: 1.1rem;
+            padding: 0.6rem 0;
+            opacity: 0.8;
+        }
+        /* footer */
+        
+        footer {
+            background: var(--exDark);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .bbback {
+            background: rgba(0, 0, 255, 0.774);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.4rem;
+        }
+        
+        .social-links a {
+            border: 2px solid #fff;
+            color: #fff;
+            display: block;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            margin: 0 0.3rem;
+            transition: all 0.5s ease;
+        }
+        
+        .social-links a:hover {
+            background: #fff;
+            color: var(--exDark);
+        }
+        
+        .footer span {
+            margin-top: 1rem;
+            display: block;
+            letter-spacing: 2px;
+        }
+        /*blog post  griddy.io*/
+        
+        .blog-post {
+            display: grid;
+            grid-template-columns: 5fr 2fr;
+            grid-template-rows: 1fr;
+            grid-column-gap: 100px;
+            grid-row-gap: 50px;
+            justify-items: stretch;
+            align-items: stretch;
+        }
+        /*blog post*/
+        /* Media Queries */
+        
+        @media screen and (min-width: 540px) {
+            .navbar-nav a {
+                padding-right: 1.2rem;
+                padding-left: 1.2rem;
+            }
+            .avbar-nav a {
+                padding-right: 1.2rem;
+                padding-left: 1.2rem;
+            }
+            .banner-title {
+                font-size: 5rem;
+            }
+            .banner form {
+                margin-top: 1.4rem;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        @media screen and (min-width: 768px) {
+            .navbar .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .avbar .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .blog-content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        @media screen and (min-width: 992px) {
+            .blog-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .about-content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 3rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="avbar">
+            <div class="container">
+                <div>
+                    <a href="index.html" class="avbar-brand">آشنایی با رشته</a>
+                </div>
+
+                <div class="avbar-nav">
+                    <a href="index.html">خانه</a>
+                    <a href="index.html#blog">مطالب</a>
+                    <a href="index.html#about">چند رسانه ای</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <hr />
+    <!--blog banner-->
+    <div class="b-banner" style="
+        background: linear-gradient(rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.671)),
+          url(images/programme_phd.jpg) center/cover no-repeat;
+      ">
+        <div class="container">
+            <h2 class="b-banner-title">گرایش های دکتری و ارشد در رشته مهندسی کامپیوتر</h2>
+        </div>
+    </div>
+    <!--blog banner ends-->
+    <!--blog post-->
+
+    <!-- about -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="blog-post" style="min-height: 63vh">
+                <!--post started (grid/flexbox)-->
+                <div class="about-text">
+                    <div class="title">
+                        <h2>گرایش های دکتری و ارشد در رشته مهندسی کامپیوتر</h2>
+                    </div>
+
+                    <p>در مقطع کارشناسی ارشد، رشته مهندسی کامپیوتر دارای شش گرایش زیر است:</p>
+                    <h3>۱-گرایش مهندسی نرم‌افزار</h3>
+                    <p>
+                        در گرایش نرم‌افزار در مقطع کارشناسی ارشد دانشجویان با سیستم‌های عامل پیشرفته، بانکهای اطلاعاتی، برنامه‌نویسی پیشرفته و تحت WEB، الگوریتم‌های پردازش موازی و ... آشنا می‌شوند. با توجه به دروسی که در این گرایش از گرایش‌های کارشناسی ارشد، ارائه می‌شوند دانشجو
+                        می‌تواند توانایی های متفاوتی را کسب کند که در زیر به آنها اشاره می‌شود:
+                    </p>
+                    <h4>سیستم عامل ها</h4>
+                    <p>
+                        دانشجویان کارشناسی در طول تحصیل خود به طور تئوری و غیر سنگینی با سیستم‌های عامل و زیر و بم های آنها آشنا می‌شوند حال آنکه کارشناس ارشد مهندسی نرم افزار تا جایی پیش می‌رود که بتواند یک سیستم عامل مستقل و جدید و در عین حال شایسته را پیاده سازی کند.
+                    </p>
+                    <h4>اتوماسیون اداری</h4>
+                    <p>اتوماتیک کردن روند فعالیت‌های یک اداره موسسه یا سازمان به وسیله کامپیوتر.</p>
+                    <h4>برنامه نویسی همروند</h4>
+                    <p>
+                        به وجود آوردن همزمان چند برنامه در کامپیوتر و مدیریت آنها.
+                    </p>
+                    <h4>الگوریتم‌های موازی</h4>
+                    <p>شکستن الگوریتم‌ها به قسمت هایی که میتوانند به صورت همزمان توسط چند پردازنده انجام شوند به منظور افزایش سرعت اجرای الگوریتم.</p>
+                    <h4>طراحی و ساخت کامپایلرها</h4>
+                    <h4>شبیه سازی و گرافیک کامپیوتری</h4>
+                    <h3>۱-گرایش هوش مصنوعی و رباتیکز</h3>
+                    <p>هوش مصنوعی یکی از گرایش های مهندسی کامپیوتر است که در حال حاضر در مقاطع ارشد و دکتری امکان تحصیل در این رشته وجود دارد. به طور کلی می توان گفت در هوش مصنوعی سعی بر این است سیستم هایی تولید شود که بتوانند مانند انسان ها فکر کنند و توانایی
+                        یادگیری و تصمیم گیری داشته باشند. با توجه به پیشرفت تکنولوژی و نیاز به سیستم های هوشمند، رشته هوش مصنوعی در بازار کار، بسیار مورد توجه قرار گرفته است. هوش مصنوعی یکی از موضوعات مورد توجه دانشگاه های بزرگ جهان نیز می باشد. تقریبا
+                        تمام دانشگاه های بزرگ دارای آزمایشگاه های مجهز و بزرگ برای دانشمندان و دانشجویانی هستند که در زمینه هوش مصنوعی فعالیت می کنند. از این رو این رشته، بهترین فرصت ها را برای ادامه تحصیل در دانشگاه های بزرگ نیز به شما می دهد. </p>
+                    <h3>۳-گرایش معماری سیستم های کامپیوتری</h3>
+                    <p>
+                        در این گرایش دانشجویان با معماری‌های پیشرفته کامپیوتر و ابر رایانه‌ها شبکه‌های کامپیوتری گسترده، پردازش تصویر و طراحی سیستم‌های تحمل‌پذیر خطا و ... آشنا می‌شوند. با توجه به دروسی که در این گرایش از گرایشهای کارشناسی ارشد، ارائه می‌شوند دانشجو می‌تواند
+                        توانایی‌های متفاوتی را کسب کند که در زیر به آن‌ها اشاره می‌شود:
+                    </p>
+                    <h4>
+                        طراحی و ساخت مدارهای دیجیتال
+                    </h4>
+                    <h4>معماری کامپیوتر</h4>
+                    <h4>طراحی و ساخت مدارهای واسط</h4>
+                    <p>نحوه ساخت مدارهایی که بتوانند کامپیوترها و سیستم‌های کامپیوتری متفاوت را (از جمله میکروپروسسورها ، میکروکنترلر ها و ... ) به یکدیگر متصل کنند. سیستم‌های کامپیوتری با کاربردهای خاص (مانند مودم و ...) نیز از این دسته مدارها شناخته می‌شوند.</p>
+                    <h4> طراحی و ساخت سیستم‌های بلادرنگ</h4>
+                    <p>
+                        سیستم‌های کامپیوتری که در حین انجام چند عمل مختلف، ضمانت می‌کنند اعمال خاصی در زمان‌های مشخص یا به تعداد مشخصی انجام خواهند شد.
+                    </p>
+                    <h4>کنترل</h4>
+                    <p>
+                        برای مثال سیستم‌هایی که دما را کنترل می‌کنند. در این سیستم ورودی‌ها می‌توانند شدت کار دستگاه‌های خنک کننده و یا گرم کننده و خروجی هم می‌تواند دمای محیط باشد.
+                    </p>
+                    <h3>۴-گرایش مهندسی الگوریتم ها و محاسبات</h3>
+                    <p>در این گرایش که یک گرایش جدید است، دانشجویان با الگوریتم‌های توزیعی و پیشرفته، ریاضیات پیشرفته کامپیوتری و ... آشنا می‌شوند. این گرایش جدیدترین گرایش رشته مهندسی کامپیوتر در مقطع کارشناسی ارشد می‌باشد. میزان پذیرفته شدگان در این گرایش
+                        از همه گرایش‌ها کمتر است ولی قبولی در این گرایش به دلیل توجه داوطلبان به دیگر گرایش‌های شناخته شده این رشته ، برای دانشجویان با پیش زمینه نرم افزار آسان‌تر است. در طول تحصیل در این گرایش دانشجویان در زمینه‌های زیر تعلیم داده شده
+                        یا تقویت خواهند شد:</p>
+                    <h4>طراحی الگوریتم ها</h4>
+                    <p>روش‌های طراحی الگوریتم که در دوره کارشناسی به دانشجویان تا حدودی آموزش داده شده است، در این گرایش به صورت پیشرفته و پیچیده‌تری جهت طراحی الگوریتم‌های قدرتمندتر و بهینه‌تر آموزش داده می‌شود.</p>
+                    <h4>ساختمان داده ها</h4>
+                    <p>ساختارهای داده‌ای که در طول دوره کارشناسی آموزش داده شده، ساده‌ترین نوع ساختارها بوده‌اند. حال آن‌که در این گرایش کارشناسی ارشد، ساختارهای پیچیده‌تر و نوین‌تری آموزش داده می‌شود تا برنامه نویسان را قدرتمندتر و مدرن تر از قبل جهت اجرای
+                        خواسته های نرم افزاری آماده کند.</p>
+                    <h4>ساختمان های گسسته</h4>
+                    <p>مجموعه تمام ساختمان‌های منطقی و عددی در قالب ریاضیات آموزش داده می‌شود تا با به کارگیری آن‌ها در الگوریتم‌های محاسباتی و برنامه نویسی بهترین بازدهی حاصل شود.</p>
+                    <h4>نظریه محاسبات</h4>
+                    <p>این مبحث پس از آشنایی دانشجویان با نظریه زبان‌ها و ماشین‌ها مطرح می‌شود. در این مبحث مدل‌ها و روش‌های مختلف محاسبات مورد مطالعه قرار می‌گیرد. همچنین محدودیت‌های محاسبات به ویژه در الگوریتم‌های کامپیوتری مورد مطالعه قرار می‌گیرد. راه
+                        حل‌هایی برای مسائلی که حتی با پیشرفته‌ترین سیستم‌ها هم مدت زمانی طولانی برای اجرای الگوریتمشان نیاز است، در این مبحث ارائه می‌شو</p>
+                    <h4>نظریه گراف</h4>
+                    <p>بررسی بسیار پیچیده‌تر گراف‌ها و کاربردهاشان نسبت به آنچه در دوره کارشناسی ارائه شده است.</p>
+                    <h4>نظریه بازی ها</h4>
+                    <p>نظریه بازی ها در این گرایش مطرح می‌شود و هدف آن بررسی الگوریتم‌هایی است که مانع رسیدن به یک نتیجه خاص و چگونگی چیره شدن بر آن، است.</p>
+                    <h3>۵-گرایش شبکه</h3>
+                    <p>از جمله فعالیت های کاربردی این گرایش می‌توان به موارد مهمی همچون طراحی و پیکربندی و پیاده سازی شبکه های کامپیوتری و برنامه نویسی شبکه اشاره کرد. امنیت در شبکه های کامپیوتری از دیگر مباحثی است که در قالب تعلیمات مرتبط با این گرایش قرار
+                        می‌گیرد. مهندسان گرایش شبکه های کامپیوتری همچنین قادر خواهند بود با مهندسان گرایش های دیگر مثل تجارت الکترونیک در زمینه بسترسازی برای فعالیت‌هایشان، همکاری کنند. ساختن برنامه های تحت شبکه اینترینت جهانی یا web و پیاده سازی سیستم‌های
+                        توزیع شده (مانند پایگاه داده های توزیع شده یا سیستم عاملهای توزیع شده) از دیگر فعالیت‌هایی است که به کارشناسان محصل در این گرایش آموزش داده می‌شود. این گرایش از سال 1396 به بعد در آزمون کارشناسی ارشد، از گروه مهندسی فناوری اطلاعات
+                        به گروه مهندسی کامپیوتر افزوده شد.</p>
+                    <h3>۶-گرایش رایانش امن (امنیت)</h3>
+                    <p>با توجه به افزایش وابستگی به تکنولوژی اطلاعات و ارتباطات در دولت الکترونیک و خطراتی که دراستفاده از آن با آنها مواجه هستیم مانند برنامه های مخرب ویروسها، حمله نفوذ گران و سارقان، حملات Dos و DDos و … نیاز به متخصصینی که بتوانند جلوی
+                        اینگونه خطرات را بگیرند و یا در صورت بروز سیستم ها را سریعاً ریکاوری کنند بسیار احساس می شود. بنا بر گزارش Gartner بین رشته های کامپیوتر این رشته بیشترین رشد را در سال ۲۰۰۵ داشته است که خود گواهی بر اهمیت و ضرورت امنیت اطلاعات
+                        در شرکت ها و سازمان ها می باشد. این گرایش نیز از سال 1396 به بعد، از گروه مهندسی فناوری اطلاعات به رشته مهندسی کامپیوتر افزوده شد. فراهم سازی امنیت لازم برای تراکنش‌های مالی بانک‌ها از جمله فعالیت های متخصین رایانش امن می باشد.</p>
+                </div>
+                <!--post ended-->
+                <!--side bar(grid/flexbox) -->
+                <div>
+                    <div>
+                        <div class="card-container" style="margin-top: 40px;">
+                            <span class="pro">تولید محتوا</span>
+
+                            <h3>آرمین بهروزی</h3>
+                            <h6 style="font-size: 14px">
+                                <i class="fas fa-map-marker-alt"></i> تهران
+                            </h6>
+                            <p>
+                                دانشجوی مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                            </p>
+
+                            <div class="skills">
+                                <h6 style="text-align: right"></h6>
+                            </div>
+                        </div>
+                        <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                            <span class="pro">تولید محتوا</span>
+
+                            <h3>کامیار مرادیان</h3>
+                            <h6 style="font-size: 14px">
+                                <i class="fas fa-map-marker-alt"></i> کرج
+                            </h6>
+                            <p>
+                                دانشجوی مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                            </p>
+
+                            <div class="skills">
+                                <h6 style="text-align: right"></h6>
+                            </div>
+                        </div>
+                        <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                            <span class="pro">تولید محتوا</span>
+
+                            <h3>محمد صادقی پولایی</h3>
+                            <h6 style="font-size: 14px">
+                                <i class="fas fa-map-marker-alt"></i> بابل
+                            </h6>
+                            <p>
+                                دانشجوی مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                            </p>
+
+                            <div class="skills">
+                                <h6 style="text-align: right"></h6>
+                            </div>
+                        </div>
+                        <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                            <span class="pro">تولید محتوا</span>
+
+                            <h3>امیر علی فرازمند</h3>
+                            <h6 style="font-size: 14px">
+                                <i class="fas fa-map-marker-alt"></i> تهران
+                            </h6>
+                            <p>
+                                دانشجوی مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                            </p>
+
+                            <div class="skills">
+                                <h6 style="text-align: right"></h6>
+                            </div>
+                        </div>
+
+                        <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                            <span class="pro" style="background-color: aqua; color: black">طراح</span
+                >
+
+                <h3>عرفان ابراهیمی سویز</h3>
+                <h6 style="font-size: 14px">
+                  <i class="fas fa-map-marker-alt"></i> تهران
+                </h6>
+                <p>
+                  دانشجوی رشته کامپیوتر<br />
+                  دانشگاه علم و صنعت ایران
+                </p>
+                <div class="skills">
+                  <h6 style="text-align: right"></h6>
+                </div>
+              </div>
+              <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                <span class="pro" style="background-color: aqua; color: black"
+                  >طراح</span
+                >
+
+                <h3>آرین عبدالهی ثابت نژاد</h3>
+                <h6 style="font-size: 14px">
+                  <i class="fas fa-map-marker-alt"></i> تهران
+                </h6>
+                <p>
+                   دانشجوی رشته کامپیوتر<br />
+                  دانشگاه علم و صنعت ایران
+                </p>
+                <div class="skills">
+                  <h6 style="text-align: right"></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--side bar ended-->
+            </div>
+        </div>
+    </section>
+    <!-- end of about -->
+
+    <!-- footer -->
+    <footer class="bbback">
+        <div class="social-links">
+            <a href="#"><i class="fas fa-paper-plane"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <span>آشنایی با رشته و مهارت های دانشجویی</span>
+                            </footer>
+                            <!-- end of footer -->
+</body>
+
+</html>

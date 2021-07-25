@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>آشنایی با رشته و مهارت های دانشجویی</title>
+    <!--styles & css-->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <!--font awesome icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <style>
+        /* font from google fonts
+
+https://fonts.google.com/?preview.size=64&preview.layout=row&selection.family=Markazi+Text:wght@400;500;600;700|Quicksand:wght@300;400;500;600;700&category=Serif,Sans+Serif&query=quick
+*/
+        
+        @import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+        /*
+font-family: 'Markazi Text', serif;
+font-family: 'Quicksand', sans-serif;
+*/
+        
+         :root {
+            --dark: #3c393d;
+            --exDark: #2b2b2b;
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            line-height: 1.4;
+            color: var(--dark);
+            direction: rtl;
+            font-family: "Markazi Text", serif;
+        }
+        
+        img {
+            width: 100%;
+            display: block;
+        }
+        /*ssss*/
+        
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 1.2rem;
+        }
+        /*header*/
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+        }
+        
+        .backreg {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/banner-bg.jpg) center/cover no-repeat fixed;
+        }
+        
+        .navbar {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.2rem;
+        }
+        
+        .navbar-brand {
+            color: #fff;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .navbar-nav {
+            padding: 0.8rem 0 0.2rem 0;
+            text-align: center;
+        }
+        
+        .navbar-nav a {
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.4rem 0.1rem;
+            transition: opacity 0.5s ease;
+        }
+        
+        .navbar-nav a:hover {
+            opacity: 0.7;
+        }
+        
+        .banner {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .banner-title {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        
+        .banner-title span {
+            color: var(--exDark);
+        }
+        
+        .banner p {
+            padding: 1rem 0 2rem 0;
+            font-size: 1.2rem;
+            font-weight: 300;
+            word-spacing: 2px;
+        }
+        
+        .letsgobtn {
+            width: auto;
+            padding-inline: 5 px;
+            font-size: 1.1rem;
+            color: #fff;
+            border: none;
+            background: transparent;
+            outline: 0;
+            cursor: pointer;
+        }
+        /*blog post header*/
+        
+        .avbar {
+            background: rgb(255, 255, 255);
+            padding: 1.2rem;
+        }
+        
+        .avbar-brand {
+            color: blue;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .avbar-brand:hover {
+            opacity: 0.7;
+            color: blue;
+        }
+        
+        .avbar-nav {
+            padding: 0.8rem 0 0.2rem 0;
+            text-align: center;
+        }
+        
+        .avbar-nav a {
+            font-weight: 500;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            display: inline-block;
+            padding: 1rem 0.5rem;
+            transition: opacity 0.5s ease;
+        }
+        
+        .avbar-nav a:hover {
+            opacity: 0.7;
+            color: blue;
+        }
+        /*end of blog post header*/
+        /* side bar*/
+        
+        .card-container h3 {
+            margin: 10px;
+            font-size: 18px;
+        }
+        
+        .card-container h6 {
+            margin: 5px;
+            font-size: 18px;
+        }
+        
+        .card-container p {
+            line-height: 21px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .card-container {
+            box-sizing: border-box;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+            color: var(--dark);
+            padding-top: 30px;
+            position: relative;
+            width: 350px;
+            max-width: 100%;
+            text-align: center;
+        }
+        
+        .card-container .pro {
+            color: white;
+            background-color: #5c0086;
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 3px 7px;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        
+        button.primary {
+            background-color: rgba(0, 0, 255, 0.747);
+            border: 1px solid rgba(0, 0, 255, 0.747);
+            border-radius: 3px;
+            color: white;
+            font-size: 16px;
+            padding: 10px 25px;
+            margin: 5px;
+        }
+        
+        button.primary.ghost {
+            background-color: transparent;
+            color: blue;
+        }
+        
+        .skills {
+            font-family: 'Quicksand', sans-serif;
+            background-color: rgba(0, 0, 255, 0.747);
+            text-align: left;
+            padding: 15px;
+            margin-top: 30px;
+            color: white;
+        }
+        
+        .skills ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .skills ul li {
+            border: 1px solid #ffffff;
+            border-radius: 2px;
+            display: inline-block;
+            font-size: 12px;
+            margin: 0 7px 7px 0;
+            padding: 7px;
+        }
+        /* side bar*/
+        /*blog post banner*/
+        
+        .b-banner {
+            padding: 7%;
+            min-height: 10vh;
+            background-color: rgb(0, 0, 0, 80%);
+            flex: 1;
+            display: flex;
+            color: #fff;
+        }
+        
+        .b-banner-title {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        /*end of blog post banner*/
+        /* blog */
+        
+        .blog {
+            background: #f9f9f9;
+            padding: 4.5rem 0;
+        }
+        
+        .blog-content {
+            margin: 2rem 0;
+        }
+        
+        .blog-img {
+            position: relative;
+        }
+        
+        .blog-img span {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--exDark);
+            color: #fff;
+            font-size: 1.4rem;
+            padding: 0.3rem 0.6rem;
+        }
+        
+        .blog-text {
+            margin: 2.2rem 0;
+            padding: 0 1rem;
+        }
+        
+        .blog-text span {
+            font-weight: 300;
+            display: block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .blog-text h2 {
+            padding: 1rem 0;
+            font-size: 1.65rem;
+            font-weight: 500;
+        }
+        
+        .blog-text p {
+            font-weight: 300;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            padding-bottom: 1.2rem;
+        }
+        
+        .blog-text a {
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: var(--dark);
+            display: inline-block;
+            background: var(--dark);
+            color: #fff;
+            padding: 0.55rem 1.2rem;
+            transition: all 0.5s ease;
+        }
+        
+        .blog-text a:hover {
+            background: var(--exDark);
+        }
+        /*end of blog*/
+        /* about */
+        
+        .about {
+            padding: 4.5rem 0;
+        }
+        
+        .about-text {
+            margin: 2rem 0;
+        }
+        
+        .about-text>p {
+            font-size: 1.1rem;
+            padding: 0.6rem 0;
+            opacity: 0.8;
+        }
+        /* footer */
+        
+        footer {
+            background: var(--exDark);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .bbback {
+            background: rgba(0, 0, 255, 0.774);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.4rem;
+        }
+        
+        .social-links a {
+            border: 2px solid #fff;
+            color: #fff;
+            display: block;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            margin: 0 0.3rem;
+            transition: all 0.5s ease;
+        }
+        
+        .social-links a:hover {
+            background: #fff;
+            color: var(--exDark);
+        }
+        
+        .footer span {
+            margin-top: 1rem;
+            display: block;
+            letter-spacing: 2px;
+        }
+        /*blog post  griddy.io*/
+        
+        .blog-post {
+            display: grid;
+            grid-template-columns: 5fr 2fr;
+            grid-template-rows: 1fr;
+            grid-column-gap: 100px;
+            grid-row-gap: 50px;
+            justify-items: stretch;
+            align-items: stretch;
+        }
+        /*blog post*/
+        /* Media Queries */
+        
+        @media screen and (min-width: 540px) {
+            .navbar-nav a {
+                padding-right: 1.2rem;
+                padding-left: 1.2rem;
+            }
+            .avbar-nav a {
+                padding-right: 1.2rem;
+                padding-left: 1.2rem;
+            }
+            .banner-title {
+                font-size: 5rem;
+            }
+            .banner form {
+                margin-top: 1.4rem;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        @media screen and (min-width: 768px) {
+            .navbar .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .avbar .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .blog-content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        @media screen and (min-width: 992px) {
+            .blog-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .about-content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 3rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="avbar">
+            <div class="container">
+                <div>
+                    <a href="index.html" class="avbar-brand">آشنایی با رشته</a>
+                </div>
+
+                <div class="avbar-nav">
+                    <a href="index.html">خانه</a>
+                    <a href="index.html#blog">مطالب</a>
+                    <a href="index.html#about">چند رسانه ای</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <hr />
+    <!--blog banner-->
+    <div class="b-banner" style="
+        background: linear-gradient(rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.671)),
+          url(images/uni.jpg) center/cover no-repeat;
+      ">
+        <div class="container">
+            <h2 class="b-banner-title">توصیه هایی برای نو ورودان</h2>
+        </div>
+    </div>
+    <!--blog banner ends-->
+    <!--blog post-->
+
+    <!-- about -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="blog-post" style="min-height: 63vh">
+                <!--post started (grid/flexbox)-->
+                <div class="about-text">
+                    <div class="title">
+                        <h2>توصیه هایی برای نو ورودان</h2>
+
+                    </div>
+                    <p style="text-align:right"> <strong> مقدمه:  
+                    </strong>
+                    </p>
+
+                    <p style="text-align:right"> سلام خدمت نو ورودان عزیز که با موفقیت وارد دانشگاه علم و صنعت، یکی از برترین دانشگاه های کشور میباشد، شدید. این موفقیت بزرگ را به شما تبریک عرض می نمایم و امیدوارم همیشه در زندگیتان موفق باشید. در اینجا چند تا توصیه برایتان دارم تا
+                        به عنوان تازه وارد به مشکلی برنخورید:
+
+
+
+                    </p>
+
+
+
+                    <p style="text-align:right"> <strong> دوست پیدا کنید:  
+                    </strong>
+
+
+                    </p>
+
+                    <p style="text-align:right"> اول از همه شما انسان هستید و انسان یک موجود اجتماعی هست. پس دائما در حال ارتباط با بقیه هستید و در این راه به مشکلاتی بر میخورید و... . در این راه شما به شدت نیاز به دوستانی پیدا میکنید تا در شادی و ناراحتی ها پشت هم باشید و بتوانید
+                        این دوره تحصیلی را نیز مانند گذشته به خوبی طی کنید.
+
+
+
+                    </p>
+
+
+
+                    <p style="text-align:right"> <strong> دانشگاه  
+                    </strong><strong><span style="font-size:16.0pt">vs  </strong><strong> &nbsp;مدرسه:  </strong>
+
+                    </p>
+
+                    <p style="text-align:right"> اینجا دانشگاست، مدرسه نیست. درسته هر دو محیط آموزشی، فرهنگی و ورزشی دارند ولی برخی نکات که در ادامه آنها را مطرح میکنم باعث تفاوت هایی شده:
+
+
+
+                    </p>
+
+                    <p style="text-align:right"> <strong>  رتبه کنکورتان را فراموش کنید:  
+                    </strong> درست است که زحمت زیادی کشیدید و خرخونی کردید J و با آن در مدرسه اعتبار زیادی بین مدیر، معاون، معلم و دوستانتان کسب کردید ولی رتبه کنکورتان فقط برای ورود به دانشگاه بوده و دیگر اینجا افراد با آن مقایسه نمی شوند بلکه فعالیتتان
+                        و نمرات امتحانات شما را از بقیه ممتاز میکنید. حتی نازیدن به رتبه کنکور در بعضی مواقع باعث غرور کاذب و افتادن دانشجو در دروس میشود.
+
+
+
+                    </p>
+
+                    <p style="text-align:right"> <strong>  نمره ی قبولی:  
+                    </strong> در دانشگاه همانند مدرسه با نمره 10 درس را قبول میشوید(یا پاس میکنید) ولی برای اینکه ترم را نیفتید باید معدلتان حداقل 12 باشد.
+
+
+
+                    </p>
+
+                    <p style="text-align:right"> <strong>  قوانین کلاس ها:  
+                    </strong> در کلاس اگر نیاز به خروج از کلاس پیدا کردید نیاز نیست مانند مدرسه دست بلند کنید و از استاد اجازه بگیرید و همینطور برای ورود به کلاس. در مورد غیبت کردن هم اساتید یه حداکثر غیبتی را اولین جلسه اعلام میکنند مثلا شما حق دارید
+                        حداکثر سه جلسه غیبت کنید و در غیر اینصورت استاد شما را مجبور به حذف درس میکند و باید اون درس را در ترم های آینده بگذرانید.
+
+
+
+                    </p>
+
+                    <p style="text-align:right"> تا یادم نرفته در مورد غیبت کردن هم لزومی ندارد مانند مدرسه با دانشگاه یا استاد تماس بگیرید و همینطوری میتونید سر کلاس نرید و مشکلی پیش نمیاد.(اگر هم دوست دارید میتونید با استاد هماهنگ کنید)
+
+
+
+                    </p>
+
+
+
+                    <p style="text-align:right"> <strong> لذت یادگیری:  
+                    </strong>
+
+
+                    </p>
+
+                    <p style="text-align:right"> در دانشگاه بجای غر زدن درباره اینکه این درس فایده ندارد، فلان درس در رشته ما کاربرد ندارد و... سعی کنید درس را بخاطر همان درس بخوانید شما در هر صورت مجبور هستید که آن درس را قبول شوید یا به اصطلاح پاس کنید پس بجای حس منفی نسبت به آن،
+                        برای یادگیری آن درس را بخوانید اینطور هم نمره خوبی میگیرید و هم خود و دیگران را با گلایه های زیاد اذیت نمیکنید.
+
+                        <span style="font-family:Wingdings">J &nbsp;&nbsp;  
+                     
+                </p>
+
+
+
+                <p style="text-align:right"> <strong> امتحانات و نمره گرفتن:  
+                    </strong>     
+                </p>
+
+                <p style="text-align:right"> اگر فکر میکنید که اینجا هم مانند مدرسه هست و به راحتی میتوانید نمرات 19-20 بگیرید سخت در اشتباهید. نمی گویم گرفتن چنین نمراتی غیر ممکن هست ولی نیازمند پشتکار زیاد در طول ترم میباشد. این را گفتم که اگر در دبیرستان تمام نمراتتان 20 بود
+                    در دانشگاه با گرفتن 18 به فکر خودکشی نیفتید بلکه به صورت نسبی بازه نمرات خوب در دانشگاه 17-20 هست.                      
+                </p>
+                <p style="text-align:right"> در مورد امتحان هم این رو بگم که به هیچ وجه شب امتحانی نباشید. یعنی در طول تمرین آنقدر مشغول تفریح نشید که کلا درس رو کنار بگذارید و اینگونه فشار زیادی را در آخر ترم به خود وارد کنید. از آن طرف بوم هم نیفتید. یعنی آنقدر درگیر درس نشوید
+                    که هیچ تفریحی نداشته باشید و یا نتوانید هیچ مهارت جانبی یاد بگیرید. 
+                     
+                     
+                     
+                </p>
+
+                <p style="text-align:right"> <strong> انتخاب واحد:  
+                    </strong>
+                     
+                     
+                </p>
+
+                <p style="text-align:right"> در دانشگاه مانند مدرسه یه تعداد واحدی را باید بگذرانید مثلا درس حسابان 2 در پایه دوازدهم 3 واحد بود یعنی در هفته 3 ساعت کلاس داشتید. در دانشگاه هم همینطور هست دروس 1و2و3 واحدی هستند 
+                     
+                     
+                     
+                </p>
+
+                <p style="text-align:right"> یک واحدی ها و دو واحدی ها معمولا یک جلسه و سه واحدی ها دو جلسه یک و نیم ساعته می باشد. 
+                     
+                     
+                     
+                </p>
+
+                <p style="text-align:right"> انتخاب واحد ترم اول رو دانشگاه براتون انجام میده ولی برای ترم های بعدی خودتون باید از 12 تا 20 واحد انتخاب رشته بکنید و میتونید از چارت های درسی مربوط به رشتتون که در اینترنت هست استفاده بکنید. بعضی دروس پیشنیاز بعضی دروس دیگرند و
+                    شما نمیتوانید دروسی که پیشنیاز آنها را پاس نکردید انتخاب کنید. به صورت کلی اگر معدلتان بالای 17 شود شما معدل الف میشوید و میتوانید در ترم بعد تا حداکثر 24 واحد بردارید ولی اگه مشروط شوید و ترم را بیفتید، ترم بعد حداکثر 14 واحد
+                    میتوانید بردارید. 
+                     
+                     
+                     
+                </p>
+
+                <p style="text-align:right"> <strong> جمع بندی:  
+                    </strong>
+                          
+                </p>
+                <p style="text-align:right"> در پایان همیشه سعی کنید وظیفه خودتان را انجام دهید و به بقیه دانشجو ها ارتباط خوبی داشته باشید درس خودتان را خوب بخوانید تا به مشکلی بر نخورید امیدوارم با موفقیت بتوانید به درجات بالای علمی دست یابید و باعث سر افرازی کشورتان شوید.     
+                </p>
+                <p style="text-align:right"> <strong> با تشکر  
+                    </strong>                     
+                </p>
+                
+
+                </div>
+                <!--post ended-->
+                <!--side bar(grid/flexbox) -->
+                <div>
+                    <div>
+                        <div class="card-container" style="margin-top: 40px;">
+                            <span class="pro">تولید محتوا</span>
+
+                        <h3>محمد صادقی پولایی</h3>
+                        <h6 style="font-size: 14px">
+                            <i class="fas fa-map-marker-alt"></i> بابل
+                        </h6>
+                        <p>
+                            دانشجوی مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                        </p>
+
+                        <div class="skills">
+                            <h6 style="text-align: right"></h6>
+                        </div>
+                </div>
+                <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                    <span class="pro">تولید محتوا</span>
+
+                    <h3>کامیار مرادیان</h3>
+                    <h6 style="font-size: 14px">
+                        <i class="fas fa-map-marker-alt"></i> کرج
+                    </h6>
+                    <p>
+                        دانشجوی مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                    </p>
+
+                    <div class="skills">
+                        <h6 style="text-align: right"></h6>
+                    </div>
+                </div>
+
+                <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                    <span class="pro">تولید محتوا</span>
+
+                    <h3>امیر علی فرازمند</h3>
+                    <h6 style="font-size: 14px">
+                        <i class="fas fa-map-marker-alt"></i> تهران
+                    </h6>
+                    <p>
+                        دانشجوی ظاهرا خسته مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                    </p>
+
+                    <div class="skills">
+                        <h6 style="text-align: right"></h6>
+                    </div>
+                </div>
+                <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                    <span class="pro">تولید محتوا</span>
+
+                    <h3>آرمین بهروزی</h3>
+                    <h6 style="font-size: 14px">
+                        <i class="fas fa-map-marker-alt"></i> تهران
+                    </h6>
+                    <p>
+                        دانشجوی مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                    </p>
+
+                    <div class="skills">
+                        <h6 style="text-align: right"></h6>
+                    </div>
+                </div>
+                <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                    <span class="pro" style="background-color: aqua; color: black">طراح</span
+                >
+
+                <h3>عرفان ابراهیمی</h3>
+                <h6 style="font-size: 14px">
+                  <i class="fas fa-map-marker-alt"></i> تهران
+                </h6>
+                <p>
+                  دانشجوی رشته کامپیوتر <br />
+                  دانشگاه علم و صنعت ایران
+                </p>
+                <div class="skills">
+                  <h6 style="text-align: right"></h6>
+                </div>
+              </div>
+              <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                <span class="pro" style="background-color: aqua; color: black"
+                  >طراح</span
+                >
+
+                <h3>آرین عبدالهی ثابت نژاد</h3>
+                <h6 style="font-size: 14px">
+                  <i class="fas fa-map-marker-alt"></i> تهران
+                </h6>
+                <p>
+                   دانشجوی رشته کامپیوتر<br />
+                  دانشگاه علم و صنعت ایران
+                </p>
+                <div class="skills">
+                  <h6 style="text-align: right"></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--side bar ended-->
+            </div>
+        </div>
+    </section>
+    <!-- end of about -->
+
+    <!-- footer -->
+    <footer class="bbback">
+        <div class="social-links">
+            <a href="#"><i class="fas fa-paper-plane"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <span>آشنایی با رشته و مهارت های دانشجویی</span>
+                    </footer>
+                    <!-- end of footer -->
+</body>
+
+</html>

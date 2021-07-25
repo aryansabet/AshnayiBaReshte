@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>آشنایی با رشته و مهارت های دانشجویی</title>
+    <!--styles & css-->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <!--font awesome icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <style>
+        /* font from google fonts
+
+https://fonts.google.com/?preview.size=64&preview.layout=row&selection.family=Markazi+Text:wght@400;500;600;700|Quicksand:wght@300;400;500;600;700&category=Serif,Sans+Serif&query=quick
+*/
+        
+        @import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+        /*
+font-family: 'Markazi Text', serif;
+font-family: 'Quicksand', sans-serif;
+*/
+        
+         :root {
+            --dark: #3c393d;
+            --exDark: #2b2b2b;
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            line-height: 1.4;
+            color: var(--dark);
+            direction: rtl;
+            font-family: "Markazi Text", serif;
+        }
+        
+        img {
+            width: 100%;
+            display: block;
+        }
+        /*ssss*/
+        
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 1.2rem;
+        }
+        /*header*/
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+        }
+        
+        .backreg {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/banner-bg.jpg) center/cover no-repeat fixed;
+        }
+        
+        .navbar {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.2rem;
+        }
+        
+        .navbar-brand {
+            color: #fff;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .navbar-nav {
+            padding: 0.8rem 0 0.2rem 0;
+            text-align: center;
+        }
+        
+        .navbar-nav a {
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.4rem 0.1rem;
+            transition: opacity 0.5s ease;
+        }
+        
+        .navbar-nav a:hover {
+            opacity: 0.7;
+        }
+        
+        .banner {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .banner-title {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        
+        .banner-title span {
+            color: var(--exDark);
+        }
+        
+        .banner p {
+            padding: 1rem 0 2rem 0;
+            font-size: 1.2rem;
+            font-weight: 300;
+            word-spacing: 2px;
+        }
+        
+        .letsgobtn {
+            width: auto;
+            padding-inline: 5 px;
+            font-size: 1.1rem;
+            color: #fff;
+            border: none;
+            background: transparent;
+            outline: 0;
+            cursor: pointer;
+        }
+        /*blog post header*/
+        
+        .avbar {
+            background: rgb(255, 255, 255);
+            padding: 1.2rem;
+        }
+        
+        .avbar-brand {
+            color: blue;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .avbar-brand:hover {
+            opacity: 0.7;
+            color: blue;
+        }
+        
+        .avbar-nav {
+            padding: 0.8rem 0 0.2rem 0;
+            text-align: center;
+        }
+        
+        .avbar-nav a {
+            font-weight: 500;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            display: inline-block;
+            padding: 1rem 0.5rem;
+            transition: opacity 0.5s ease;
+        }
+        
+        .avbar-nav a:hover {
+            opacity: 0.7;
+            color: blue;
+        }
+        /*end of blog post header*/
+        /* side bar*/
+        
+        .card-container h3 {
+            margin: 10px;
+            font-size: 18px;
+        }
+        
+        .card-container h6 {
+            margin: 5px;
+            font-size: 18px;
+        }
+        
+        .card-container p {
+            line-height: 21px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .card-container {
+            box-sizing: border-box;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+            color: var(--dark);
+            padding-top: 30px;
+            position: relative;
+            width: 350px;
+            max-width: 100%;
+            text-align: center;
+        }
+        
+        .card-container .pro {
+            color: white;
+            background-color: #5c0086;
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 3px 7px;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        
+        button.primary {
+            background-color: rgba(0, 0, 255, 0.747);
+            border: 1px solid rgba(0, 0, 255, 0.747);
+            border-radius: 3px;
+            color: white;
+            font-size: 16px;
+            padding: 10px 25px;
+            margin: 5px;
+        }
+        
+        button.primary.ghost {
+            background-color: transparent;
+            color: blue;
+        }
+        
+        .skills {
+            font-family: 'Quicksand', sans-serif;
+            background-color: rgba(0, 0, 255, 0.747);
+            text-align: left;
+            padding: 15px;
+            margin-top: 30px;
+            color: white;
+        }
+        
+        .skills ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .skills ul li {
+            border: 1px solid #ffffff;
+            border-radius: 2px;
+            display: inline-block;
+            font-size: 12px;
+            margin: 0 7px 7px 0;
+            padding: 7px;
+        }
+        /* side bar*/
+        /*blog post banner*/
+        
+        .b-banner {
+            padding: 7%;
+            min-height: 10vh;
+            background-color: rgb(0, 0, 0, 80%);
+            flex: 1;
+            display: flex;
+            color: #fff;
+        }
+        
+        .b-banner-title {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        /*end of blog post banner*/
+        /* blog */
+        
+        .blog {
+            background: #f9f9f9;
+            padding: 4.5rem 0;
+        }
+        
+        .blog-content {
+            margin: 2rem 0;
+        }
+        
+        .blog-img {
+            position: relative;
+        }
+        
+        .blog-img span {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--exDark);
+            color: #fff;
+            font-size: 1.4rem;
+            padding: 0.3rem 0.6rem;
+        }
+        
+        .blog-text {
+            margin: 2.2rem 0;
+            padding: 0 1rem;
+        }
+        
+        .blog-text span {
+            font-weight: 300;
+            display: block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .blog-text h2 {
+            padding: 1rem 0;
+            font-size: 1.65rem;
+            font-weight: 500;
+        }
+        
+        .blog-text p {
+            font-weight: 300;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            padding-bottom: 1.2rem;
+        }
+        
+        .blog-text a {
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: var(--dark);
+            display: inline-block;
+            background: var(--dark);
+            color: #fff;
+            padding: 0.55rem 1.2rem;
+            transition: all 0.5s ease;
+        }
+        
+        .blog-text a:hover {
+            background: var(--exDark);
+        }
+        /*end of blog*/
+        /* about */
+        
+        .about {
+            padding: 4.5rem 0;
+        }
+        
+        .about-text {
+            margin: 2rem 0;
+        }
+        
+        .about-text>p {
+            font-size: 1.1rem;
+            padding: 0.6rem 0;
+            opacity: 0.8;
+        }
+        /* footer */
+        
+        footer {
+            background: var(--exDark);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .bbback {
+            background: rgba(0, 0, 255, 0.774);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.4rem;
+        }
+        
+        .social-links a {
+            border: 2px solid #fff;
+            color: #fff;
+            display: block;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            margin: 0 0.3rem;
+            transition: all 0.5s ease;
+        }
+        
+        .social-links a:hover {
+            background: #fff;
+            color: var(--exDark);
+        }
+        
+        .footer span {
+            margin-top: 1rem;
+            display: block;
+            letter-spacing: 2px;
+        }
+        /*blog post  griddy.io*/
+        
+        .blog-post {
+            display: grid;
+            grid-template-columns: 5fr 2fr;
+            grid-template-rows: 1fr;
+            grid-column-gap: 100px;
+            grid-row-gap: 50px;
+            justify-items: stretch;
+            align-items: stretch;
+        }
+        /*blog post*/
+        /* Media Queries */
+        
+        @media screen and (min-width: 540px) {
+            .navbar-nav a {
+                padding-right: 1.2rem;
+                padding-left: 1.2rem;
+            }
+            .avbar-nav a {
+                padding-right: 1.2rem;
+                padding-left: 1.2rem;
+            }
+            .banner-title {
+                font-size: 5rem;
+            }
+            .banner form {
+                margin-top: 1.4rem;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        @media screen and (min-width: 768px) {
+            .navbar .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .avbar .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .blog-content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        @media screen and (min-width: 992px) {
+            .blog-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .about-content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 3rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="avbar">
+            <div class="container">
+                <div>
+                    <a href="index.html" class="avbar-brand">آشنایی با رشته</a>
+                </div>
+
+                <div class="avbar-nav">
+                    <a href="index.html">خانه</a>
+                    <a href="index.html#blog">مطالب</a>
+                    <a href="index.html#about">چند رسانه ای</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <hr />
+    <!--blog banner-->
+    <div class="b-banner" style="
+        background: linear-gradient(rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.671)),
+          url(images/plane.jpg) center/cover no-repeat;
+      ">
+        <div class="container">
+            <h2 class="b-banner-title">اپلای</h2>
+        </div>
+    </div>
+    <!--blog banner ends-->
+    <!--blog post-->
+
+    <!-- about -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="blog-post" style="min-height: 63vh">
+                <!--post started (grid/flexbox)-->
+                <div class="about-text">
+                    <div class="title">
+                        <!-- <h2>لورم ایپسوم</h2>
+                        <p>لورم لورم لورم</p> -->
+                    </div>
+                    <p style="text-align:right"> شاید بارها از زبان دانشجویان کلماتی مثل فاند، پذیرش، اپلای و ... به گوشتان خورده باشد؛ یا اصلا خودتان قصد داشته باشید در آینده ای نزدیک برای ادامه تحصیل به یک کشور خارجی سفر کنید و سوالات زیادی درباره این موضوع به ذهنتان نقش بسته باشد.&nbsp;فرایند
+                        اپلای کردن یک فرایند هزینه بر و زمان بر است و در صورتیکه از روند اپلای کردن هیچ اطلاعی نداشته باشید، هم زمان خود را از دست می دهد و هم هزینه را به باد می دهد. برای این منظور توصیه می شود که قبل از تصمیم&zwnj;گیری برای ادامه تحصیل
+                        در خارج از کشور و استارت فرایند اپلای، با افرادی که این مسیر را رفته اند صحبت کنید، اطلاعات لازم را کسب بکنید </p>
+
+                    <h2 style="text-align:right"> <strong>اپلای چیست؟</strong> </h2>
+
+                    <p style="text-align:right"> اپلای کردن یعنی، &quot;درخواستی&quot; که&nbsp; شما برای انجام ادامه تحصیل در خارج از کشور میدین گفته میشه و باید بصورت خیلی رسمی و طبق ضوابط و قوانین همون&nbsp; دانشگاه انجام بشه. پروسۀ انجام گرفته برای اپلای کردن از کشوری به کشوری
+                        دیگر و حتی از دانشگاه های یک کشور نسبت به سایر دانشگاه های آن کشور متفاوت است </p>
+
+                    <p style="text-align:right"> به گرفتن پذیرش تحصیلی، ادمیشن&nbsp;&nbsp;ادمیشن مثل اقدام به درخواست ویزا و گرفتن فرم&zwnj;های مرتبط به ویزا، گرفتن وقت سفارت، به این موارد اپلای کردن میگن و اون فردی که خواهان ادامه تحصیل در دانشگاه خارج از کشور رو داره،&nbsp; بهش
+                        اپلیکنت می گویند </p>
+
+                    <p style="text-align:right"> پس از آن که فرد برای اپلای کردن تصمیم نهایی خود را گرفت فرمی را به نام فرم درخواست یا&nbsp;فرم اپلیکیشن را پر می کند. این فرم حاوی اطلاعاتی از قبیل&nbsp;مشخصات شخصی تا سوابق شما در زمینه&zwnj;های پژوهشی و درسی و اطلاعات مربوط به درستون
+                        رو باید نوشته باشید </p>
+
+                    <p style="text-align:right"> خب از آن جا که فرآیند اپلای کردن یک فرآیند پر استرس و زمان بر است برای راحتی شما عزیزان لیستی از نیاز های قبل از اپلای کردن را برای شما در اینجا قرار میدهم </p>
+
+                    <h3 style="text-align:right"><strong> &nbsp;  مرحله اول  </strong></h3>
+
+                    <p style="text-align:right"> نخستین مرحله برای اپلای کردن بعد از اینکه تصمیم تهایی برای اپلای کردن رو گرفتیم این است که بیایم و در مورد&nbsp; کشور مقصد تصمیم گیری نهای را انجام بدیم چرا که این کشور ها قرار است چند سالی خانۀ شما برای زندگی باشند پس خیلی مهم است
+                        که بیایم و اطلاعاتی از قبلی آب و هوا و فرهنگ مردم در آن منطقه اطلاعاتی را کسب بکنیم برای این مظور تنها نباید به فیلم ها اکتفا بکنیم و کل باور هی&nbsp;خود را بر اساس یک فیلم قرار بدیم بلکه باید پرس و جو کرد تا با یک دید باز تصمیم
+                        گیری نهایی را انجام بدیم. برای این منظور من سایت کوئورا را به شما معرفی میکنم به عنوان مثال پیچ مربوط&nbsp; به زندگی در سوییس&nbsp; </p>
+
+                    <p><a href="https://www.quora.com/What-is-life-in-Switzerland-like">https://www.quora.com/What-is-life-in-Switzerland-like</a></p>
+
+                    <h3 style="text-align:right"> <strong>مرحله دوم</strong> </h3>
+
+                    <p style="text-align:right"> در این مرحله باید در مورد دانشگاه هایی که میخواهید درآنجا اپلای کنید تصمیم گیری کنید. برای این منظور بهتر است که بدانید هر دانشگاهی مدارک مورد نیاز و خاص خود را دارد. به عنوان مثال اغلب دانشگاه های کانادا مدرک آیلتس را مدنظر قرار می
+                        دهند در حالی که در آمریکا ورق به سمت آزمون تافل به میگرده. همینطور هر کدوم از این دانشگاه ها نمرۀ زبان متفاوتی را قبول دارند. حالا این جا ک&nbsp; اسمی از آزمون های زبان آوردم بهتر است که نام آزمون ها را بدانید: تافل، آیلتس، آی
+                        بی تی، جی آر ای (که اغلب مورد استفاده جهت دانشگاه های آمریکا در مقطع کارشناسی ارشد و دکترا قرار میگیرد.) </p>
+
+                    <h3 style="text-align:right"> <strong> مرحله سوم </strong> </h3>
+
+                    <p style="text-align:right"> رزومه و سابقه تحصیلی و کاری خودتون رو بنویسید وتمام مدارکی که دارید رو ترجمه رسمی بکنید. بدیهی است که هر چه رزومه شخصی شما پر بار تر باشد شانس قبولی شما در دانشگاه مدنظرتون بیشتر&nbsp;می شود. در این مرحله و در کنار ارسال مدارک تحصیلی
+                        خود بهتر است که سعی کنید و از اساتید خود توصیه نامه نیز دریافت کنید. یکی از موارد که شاید باعث بشه که استاد برای دانشگاه مدنظر شما توصیه نامه بفرستد این است که به عنوان تی ای یا همان استادیار ایشان در یک ترم از دانشگاه باشید. ناگفته
+                        نماند که تی ای شدن علاوه بر اینکه این نتیجه را میدهد، در رزومه شمانیز ثبت می شود و باعث میشود که رزومه بهتری را داشته باشد </p>
+
+                    <h3 style="text-align:right"> <strong> مرحله چهارم </strong> </h3>
+
+                    <p style="text-align:right"> در این مرحله شما یک متن به نام اس او پی یا همان انگیزه نامه را می نویسید&nbsp;که یکی از مهم ترین مدارکی می&zwnj;باشد که در نتیجه&nbsp;<strong>اپلای</strong>&nbsp;شما نقش زیادی دارد، در واقع انگیزه&zwnj;نامه که به نوعی بیانگر انگیزه
+                        شما از اپلای کردن است، تنها مدرکی است که برخلاف مدارک دیگر آینده شما را به تصویر می&zwnj;کشد و برای کمیته تصمیم&zwnj;گیری بسیار مهم است که بداند هدف و انگیزه شما از انتخاب کشور، دانشگاه و رشته مقصد مذکور چیست. انگیزه&zwnj;نامه
+                        خوب می&zwnj;تواند در پروسه اپلای کردن بسیار&nbsp;تاثیرگذار باشد </p>
+
+                    <h3 style="text-align:right"> <strong> مرحله پنجم </strong> </h3>
+
+                    <p style="text-align:right"> صبر :) در این مرحله باید منتظر بمانید تا اینکه دانشگاه مقصد با درخواست شما موافقت کند یا اینکه آنرا رد کند </p>
+
+                    <p style="text-align:right"> در صورتی که موفق به دریافت پذیرش تحصیلی شدید باید کار های زیر را انجام دهید </p>
+
+                    <p style="text-align:right"> اقدامات مربوط به درخواست ویزا بر طبق کشور مقصد </p>
+
+                    <p style="text-align:right"> دریافت ویزای تحصیلی </p>
+
+                    <p style="text-align:right"> تهیه بلیط هواپیما و ورود به کشور مقصد </p>
+
+                    <p style="text-align:right"> برای گرفتن بلیط هواپیما و یا پرداخت هزینه های مرتبط به دانشگاه خود می تونید از ویزا کارت و یا مستر کارت استفاده نمایید </p>
+
+                    <p style="text-align:right">&nbsp;</p>
+
+                    <h3 style="text-align:right"> <strong>و اما از جمله مدارم مشترک برای اپلای</strong> </h3>
+
+                    <p style="text-align:right"> شناسنامه </p>
+
+                    <p style="text-align:right"> &nbsp;انگیزه نامه </p>
+
+                    <p style="text-align:right"> &nbsp;زندگی نامه </p>
+
+                    <p style="text-align:right"> &nbsp;مدرک زبان&nbsp; </p>
+
+                    <p style="text-align:right"> &nbsp;سوابق کاری </p>
+
+                    <p style="text-align:right"> &nbsp;گذرنامه معتبر </p>
+
+                    <p style="text-align:right"> &nbsp;یک قطعه عکس </p>
+
+                    <p style="text-align:right"> &nbsp;گواهی عدم سوء پیشینه </p>
+
+                    <p style="text-align:right"> &nbsp;مدارک اثبات کننده تمکن مالی </p>
+
+                    <p style="text-align:right"> مدارک تحصیلی همراه با ریز نمرات </p>
+
+                    <p style="text-align:right"> گواهی داشتن محل اقامت در حین تحصیل </p>
+
+                    <p style="text-align:right"> &nbsp;پذیرش از دانشگاه یا موسسه آموزشی معتبر </p>
+
+                    <p style="text-align:right">&nbsp;</p>
+
+                    <h3 style="text-align:right"> <strong>فوت و فن اپلای کردن</strong> <br /> انگیزه نامه یا موارد مشابه شما بسیار مهم هستند<br /> توصیه نامه اساتید شما نیز بین 5 تا 10 درصد در افزایش شانس شما موثر است<br /> &nbsp;تعداد و کیفیت مقالات شماحدود 20 تا 40 درصد در افزایش
+                        شانس شما در گرفتن بورس موثر است.<br /> &nbsp;دانشگاهی که از آن فارغ التحصیل شده اید، هر چه شناخته شده تر باشد در افزایش شانس شما موثرتر هستند<br /> &nbsp;معدل لیسانس برای بیشتر دانشگاه&zwnj;های دنیا به عنوان عاملی که در حدود 50
+                        درصد عامل ارزیابی داوطلبان است<br /> &nbsp;نمره آزمون جی آر آی &nbsp;یا جیمت&nbsp; برای دانشگاه&zwnj;های آمریکا و کانادا هر چه نمره بالاتری داشته باشید شانس شما را بیشتر می&zwnj;کند<br /> &nbsp;یک عاملی که بسیاری به آن توجه نمی&zwnj;کنند
+                        نمرات دروسی مثل ریاضی و آمار هست که در انجام کارهای پژوهشی بسیار موثرند<br /> &nbsp;پروپوزال تحقیقاتی شما و نحوه ساختاری آن و امکان انجام و ... حدود بین 5 تا 50 درصد موثر است مثلا در استرالیا به جرات می&zwnj;شود گفت بعد از معدل
+                        مهمترین عامل است<br /> &nbsp;یکی از شانس&zwnj;های پذیرش فاکتوری است که خیلی کم به آن توجه می&zwnj;شود. متقاضیان باید بیشتر از 10 جا اپلای کنند. خیلی از دانشگاه&zwnj;ها اصلا درست بررسی نمیکنند و خیلی راحت ممکن است اپلیکیشن شما توجهی
+                        به خودش جلب نکند تا اینکه ظرفیت پر و بقیه ریجکت شوند ولی اکثرا حدود 20-15 جا در همه رنک&zwnj;های مختلف اپلای کردندن و یکی از آنها خوب درآمده است<br /> &nbsp;داشتن یک دانشگاه رنک پایین برای سوپاپ اطمینان کار خیلی خوبی نیست. در ضمن
+                        بهتر است در تعدادی دانشگاه خصوصی اپلای کنید. امسال شرایط مالی برای دانشگاه&zwnj;های پابلیک خوب نبوده و پذیرش&zwnj;های کمتری داشتند در مقایسه با دانشگاه&zwnj;های خصوصی </h3>
+
+                </div>
+                <!--post ended-->
+                <!--side bar(grid/flexbox) -->
+                <div>
+                    <div>
+                        <div class="card-container" style="margin-top: 40px;">
+                            <span class="pro">تولید محتوا</span>
+
+                            <h3>کامیار مرادیان</h3>
+                            <h6 style="font-size: 14px">
+                                <i class="fas fa-map-marker-alt"></i> کرج
+                            </h6>
+                            <p>
+                                دانشجوی مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                            </p>
+
+                            <div class="skills">
+                                <h6 style="text-align: right"></h6>
+                            </div>
+                        </div>
+                        <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                            <span class="pro">تولید محتوا</span>
+
+                            <h3>محمد صادقی پولایی</h3>
+                            <h6 style="font-size: 14px">
+                                <i class="fas fa-map-marker-alt"></i> بابل
+                            </h6>
+                            <p>
+                                دانشجوی مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                            </p>
+
+                            <div class="skills">
+                                <h6 style="text-align: right"></h6>
+                            </div>
+                        </div>
+                        <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                            <span class="pro">تولید محتوا</span>
+
+                            <h3>امیر علی فرازمند</h3>
+                            <h6 style="font-size: 14px">
+                                <i class="fas fa-map-marker-alt"></i> تهران
+                            </h6>
+                            <p>
+                                دانشجوی مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                            </p>
+
+                            <div class="skills">
+                                <h6 style="text-align: right"></h6>
+                            </div>
+                        </div>
+                        <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                            <span class="pro">تولید محتوا</span>
+
+                            <h3>آرمین بهروزی</h3>
+                            <h6 style="font-size: 14px">
+                                <i class="fas fa-map-marker-alt"></i> تهران
+                            </h6>
+                            <p>
+                                دانشجوی مهندسی کامپیوتر <br /> دانشگاه علم و صنعت ایران
+                            </p>
+
+                            <div class="skills">
+                                <h6 style="text-align: right"></h6>
+                            </div>
+                        </div>
+                        <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                            <span class="pro" style="background-color: aqua; color: black">طراح</span
+                >
+
+                <h3>عرفان ابراهیمی سویز</h3>
+                <h6 style="font-size: 14px">
+                  <i class="fas fa-map-marker-alt"></i> تهران
+                </h6>
+                <p>
+                  دانشجوی رشته کامپیوتر<br />
+                  دانشگاه علم و صنعت ایران
+                </p>
+                <div class="skills">
+                  <h6 style="text-align: right"></h6>
+                </div>
+              </div>
+              <div class="card-container" style="margin-top: 40px;opacity: 50%;">
+                <span class="pro" style="background-color: aqua; color: black"
+                  >طراح</span
+                >
+
+                <h3>آرین عبدالهی ثابت نژاد</h3>
+                <h6 style="font-size: 14px">
+                  <i class="fas fa-map-marker-alt"></i> تهران
+                </h6>
+                <p>
+                   دانشجوی رشته کامپیوتر<br />
+                  دانشگاه علم و صنعت ایران
+                </p>
+                <div class="skills">
+                  <h6 style="text-align: right"></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--side bar ended-->
+            </div>
+        </div>
+    </section>
+    <!-- end of about -->
+
+    <!-- footer -->
+    <footer class="bbback">
+        <div class="social-links">
+            <a href="#"><i class="fas fa-paper-plane"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <span>آشنایی با رشته و مهارت های دانشجویی</span>
+                            </footer>
+                            <!-- end of footer -->
+</body>
+
+</html>

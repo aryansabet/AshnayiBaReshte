@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>آشنایی با رشته و مهارت های دانشجویی</title>
+    <!--styles & css-->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+        /* font from google fonts
+
+https://fonts.google.com/?preview.size=64&preview.layout=row&selection.family=Markazi+Text:wght@400;500;600;700|Quicksand:wght@300;400;500;600;700&category=Serif,Sans+Serif&query=quick
+*/
+        
+        @import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+        /*
+font-family: 'Markazi Text', serif;
+font-family: 'Quicksand', sans-serif;
+*/
+        
+        :root {
+            --dark: #3c393d;
+            --exDark: #2b2b2b;
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            line-height: 1.4;
+            color: var(--dark);
+            direction: rtl;
+            font-family: "Markazi Text", serif;
+        }
+        
+        img {
+            width: 100%;
+            display: block;
+        }
+        /*ssss*/
+        
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 1.2rem;
+        }
+        /*header*/
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+        }
+        
+        .backreg {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/banner-bg.jpg) center/cover no-repeat fixed;
+        }
+        
+        .navbar {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.2rem;
+        }
+        
+        .navbar-brand {
+            color: #fff;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .navbar-nav {
+            padding: 0.8rem 0 0.2rem 0;
+            text-align: center;
+        }
+        
+        .navbar-nav a {
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.4rem 0.1rem;
+            transition: opacity 0.5s ease;
+        }
+        
+        .navbar-nav a:hover {
+            opacity: 0.7;
+        }
+        
+        .banner {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .banner-title {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        
+        .banner-title span {
+            color: var(--exDark);
+        }
+        
+        .banner p {
+            padding: 1rem 0 2rem 0;
+            font-size: 1.2rem;
+            font-weight: 300;
+            word-spacing: 2px;
+        }
+        
+        .letsgobtn {
+            width: auto;
+            padding-inline: 5 px;
+            font-size: 1.1rem;
+            color: #fff;
+            border: none;
+            background: transparent;
+            outline: 0;
+            cursor: pointer;
+        }
+        /*blog post header*/
+        
+        .avbar {
+            background: rgb(255, 255, 255);
+            padding: 1.2rem;
+        }
+        
+        .avbar-brand {
+            color: blue;
+            font-size: 2rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .avbar-brand:hover {
+            opacity: 0.7;
+            color: blue;
+        }
+        
+        .avbar-nav {
+            padding: 0.8rem 0 0.2rem 0;
+            text-align: center;
+        }
+        
+        .avbar-nav a {
+            font-weight: 500;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            display: inline-block;
+            padding: 1rem 0.5rem;
+            transition: opacity 0.5s ease;
+        }
+        
+        .avbar-nav a:hover {
+            opacity: 0.7;
+            color: blue;
+        }
+        /*end of blog post header*/
+        /* side bar*/
+        
+        .card-container h3 {
+            margin: 10px;
+            font-size: 18px;
+        }
+        
+        .card-container h6 {
+            margin: 5px;
+            font-size: 18px;
+        }
+        
+        .card-container p {
+            line-height: 21px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .card-container {
+            box-sizing: border-box;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+            color: var(--dark);
+            padding-top: 30px;
+            position: relative;
+            width: 350px;
+            max-width: 100%;
+            text-align: center;
+        }
+        
+        .card-container .pro {
+            color: white;
+            background-color: #5c0086;
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 3px 7px;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        
+        button.primary {
+            background-color: rgba(0, 0, 255, 0.747);
+            border: 1px solid rgba(0, 0, 255, 0.747);
+            border-radius: 3px;
+            color: white;
+            font-size: 16px;
+            padding: 10px 25px;
+            margin: 5px;
+        }
+        
+        button.primary.ghost {
+            background-color: transparent;
+            color: blue;
+        }
+        
+        .skills {
+            font-family: 'Quicksand', sans-serif;
+            background-color: rgba(0, 0, 255, 0.747);
+            text-align: left;
+            padding: 15px;
+            margin-top: 30px;
+            color: white;
+        }
+        
+        .skills ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .skills ul li {
+            border: 1px solid #ffffff;
+            border-radius: 2px;
+            display: inline-block;
+            font-size: 12px;
+            margin: 0 7px 7px 0;
+            padding: 7px;
+        }
+        /* side bar*/
+        /*blog post banner*/
+        
+        .b-banner {
+            padding: 7%;
+            min-height: 10vh;
+            background-color: rgb(0, 0, 0, 80%);
+            flex: 1;
+            display: flex;
+            color: #fff;
+        }
+        
+        .b-banner-title {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        /*end of blog post banner*/
+        /* blog */
+        
+        .blog {
+            background: #f9f9f9;
+            padding: 4.5rem 0;
+        }
+        
+        .blog-content {
+            margin: 2rem 0;
+        }
+        
+        .blog-img {
+            position: relative;
+        }
+        
+        .blog-img span {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--exDark);
+            color: #fff;
+            font-size: 1.4rem;
+            padding: 0.3rem 0.6rem;
+        }
+        
+        .blog-text {
+            margin: 2.2rem 0;
+            padding: 0 1rem;
+        }
+        
+        .blog-text span {
+            font-weight: 300;
+            display: block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .blog-text h2 {
+            padding: 1rem 0;
+            font-size: 1.65rem;
+            font-weight: 500;
+        }
+        
+        .blog-text p {
+            font-weight: 300;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            padding-bottom: 1.2rem;
+        }
+        
+        .blog-text a {
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: var(--dark);
+            display: inline-block;
+            background: var(--dark);
+            color: #fff;
+            padding: 0.55rem 1.2rem;
+            transition: all 0.5s ease;
+        }
+        
+        .blog-text a:hover {
+            background: var(--exDark);
+        }
+        /*end of blog*/
+        /* about */
+        
+        .about {
+            padding: 4.5rem 0;
+        }
+        
+        .about-text {
+            margin: 2rem 0;
+        }
+        
+        .about-text>p {
+            font-size: 1.1rem;
+            padding: 0.6rem 0;
+            opacity: 0.8;
+        }
+        /* footer */
+        
+        footer {
+            background: var(--exDark);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .bbback {
+            background: rgba(0, 0, 255, 0.774);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.4rem;
+        }
+        
+        .social-links a {
+            border: 2px solid #fff;
+            color: #fff;
+            display: block;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            margin: 0 0.3rem;
+            transition: all 0.5s ease;
+        }
+        
+        .social-links a:hover {
+            background: #fff;
+            color: var(--exDark);
+        }
+        
+        .footer span {
+            margin-top: 1rem;
+            display: block;
+            letter-spacing: 2px;
+        }
+        /*blog post  griddy.io*/
+        
+        .blog-post {
+            display: grid;
+            grid-template-columns: 5fr 2fr;
+            grid-template-rows: 1fr;
+            grid-column-gap: 100px;
+            grid-row-gap: 50px;
+            justify-items: stretch;
+            align-items: stretch;
+        }
+        /*blog post*/
+        /* Media Queries */
+        
+        @media screen and (min-width: 540px) {
+            .navbar-nav a {
+                padding-right: 1.2rem;
+                padding-left: 1.2rem;
+            }
+            .avbar-nav a {
+                padding-right: 1.2rem;
+                padding-left: 1.2rem;
+            }
+            .banner-title {
+                font-size: 5rem;
+            }
+            .banner form {
+                margin-top: 1.4rem;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        @media screen and (min-width: 768px) {
+            .navbar .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .avbar .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .blog-content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        @media screen and (min-width: 992px) {
+            .blog-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .about-content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 3rem;
+                align-items: center;
+            }
+        }
+    </style>
+    <!--font awesome icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+</head>
+
+<body>
+    <header class="backreg">
+        <nav class="navbar">
+            <div class="container">
+                <div>
+                    <a href="index.html" class="navbar-brand">آشنایی با رشته</a>
+                </div>
+
+                <div class="navbar-nav">
+                    <a href="index.html">خانه</a>
+                    <a href="index.html#blog">مطالب</a>
+                    <a href="index.html#about">چند رسانه ای</a>
+                </div>
+            </div>
+        </nav>
+        <div class="banner">
+            <div class="container">
+                <h1 class="banner-title">آشنایی با رشته و مهارت های دانشجویی</h1>
+                <p>
+                    تو این سایت یک سری مطالب تهیه کردیم که به درد بچه های نو ورود بخوره و به قول خودمونی اونارو بیاره توی باغ
+                    <i class="fab fa-angellist"></i>
+                </p>
+                <button class="letsgobtn">
+            برو بریم <i class="far fa-arrow-alt-circle-down"></i>
+          </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- blog -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="title">
+                <h2>لیست</h2>
+
+            </div>
+            <div class="blog-content">
+                <!-- item -->
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="images/programme_phd.jpg" alt="" />
+                    </div>
+                    <div class="blog-text">
+
+                        <h2>گرایش های ارشد و دکتری برای کامپیوتر</h2>
+                        <p>
+                            برای اینکه در آینده موفق شویم باید آجر های بنای خود را از الان پایه گذاری کنیم پس آشنایی با گرایش های دکتری و ارشد می تواند یکی از مهم ترین قدم های ما به سوی موفقیت باشد: در مقطع کارشناسی ارشد، رشته مهندسی کامپیوتر اداری...
+                        </p>
+                        <a href="gerayesh2.html">ادامه مطلب</a>
+                    </div>
+                </div>
+                <!-- end of item -->
+                <!-- item -->
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="images/shutterstock_312944546.jpg" alt="" />
+                    </div>
+                    <div class="blog-text">
+
+                        <h2>انگیزشی</h2>
+                        <p>
+                            انگیزه یکی از مهم ترین عامل ها برای موفقیت است پس چند داستان انگیزشی می تواند شما را سرگرم کند و هم انگیزه بیشتری برای دست یابی به اهدافتان می دهد.
+                        </p>
+                        <a href="angizeshi.html">ادامه مطلب</a>
+                    </div>
+                </div>
+                <!-- end of item -->
+                <!-- item -->
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="images/work.jpg" alt="" />
+                    </div>
+                    <div class="blog-text">
+
+                        <h2>بازار کار</h2>
+                        <p>
+                            ما وقتی می خواهیم رشته ای را برای تحصیل انتخاب کنیم قبل از هر چیزی به بازار کار آن رشته یک نگاه می اندازیم بالاخره کسب درامد یک از مهم ترین اهداف ما است و ما الان قصد داریم درباره بازار کار رشته کامپیوتر صحبت کنیم. بازار کار مهندسی کامپیوتر به شدت....
+                        </p>
+                        <a href="bazare_kar.html">ادامه مطلب</a>
+                    </div>
+                </div>
+                <!-- end of item -->
+                <!-- item -->
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="images/uni.jpg" alt="" />
+                    </div>
+                    <div class="blog-text">
+
+                        <h2>نو ورودان</h2>
+                        <p>
+                            ما می خواهیم که در این وبلاگ نصایحه، تجربیات و تفکرات عموم جامع درباره دانشگاه علم و صنعت شرح دهیم. سلام به نو ورودان ..
+                        </p>
+                        <a href="novorodan2.html">ادامه مطلب</a>
+                    </div>
+                </div>
+                <!-- end of item -->
+                <!-- item -->
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="images/learn.jpg" alt="" />
+                    </div>
+                    <div class="blog-text">
+
+                        <h2>آموزشی</h2>
+                        <p>
+                            لینوکس یکی از جالب ترین و مهم ترین مبحث ها برای یادگیری در رشته مهندسی کامپیوتر است در این بخش ما هدفمان نصب و آشنایی با کالی لینوکس است.
+                        </p>
+                        <a href="#about">ادامه مطلب</a>
+                    </div>
+                </div>
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="images/plane.jpg" alt="" />
+                    </div>
+                    <div class="blog-text">
+
+                        <h2>اپلای</h2>
+                        <p>
+                            اپلای کردن به خارج برای تحصیل یا زندگی می نواند یکی از بزرگ ترین دقدقه های ما باشد و اینکه این کار را اصلا چگونه انجام دهیم خود یک سوال بزرگ است ولی این متن می تواند شما را راهنمایی کند.
+                        </p>
+                        <a href="start_up.html">ادامه مطلب</a>
+                    </div>
+                </div>
+                <!-- </div>
+                 //end of item 
+                 //item
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="images/blog-p-1.jpg" alt="" />
+                    </div>
+                    <div class="blog-text">
+                        <span>20 January, 2020</span>
+                        <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.
+                        </p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div> -->
+                <!-- end of item -->
+            </div>
+        </div>
+    </section>
+    <!-- end of blog -->
+
+    <!-- about -->
+    <h1 style="margin-right: 25px;">محتوای چند رسانه ای</h1>
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <div id="7318071139">
+                        <script type="text/JavaScript" src="https://www.aparat.com/embed/4k9rE?data[rnddiv]=7318071139&data[responsive]=yes&&recom=self"></script>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <div class="title">
+                        <h2>آموزشی</h2>
+                        <p>آشنایی با کالی لینوکس</p>
+                    </div>
+                    <p>
+                        اصلا کالی لینوکس چیست این خیلی مهم است که قبل از این که به آموزش درسی بپردازی اول متوجه بشی که آن مبحث اصلا چی هست پس ما در این ویدیو به آشنایی با کالی لینوکس می پردازیم.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <div id="4441188074">
+                        <script type="text/JavaScript" src="https://www.aparat.com/embed/XdnUr?data[rnddiv]=4441188074&data[responsive]=yes&&recom=self"></script>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <div class="title">
+                        <h2>آموزشی</h2>
+                        <p>نصب کالی لینوکس</p>
+                    </div>
+                    <p>
+                        در این جا می خواهیم به نصب کالی لینوکس به صورت dualboot صحبت کنیم
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="about-content">
+            <div>
+                <div id="13481145273">
+                    <script type="text/JavaScript" src="https://www.aparat.com/embed/FkS4z?data[rnddiv]=13481145273&data[responsive]=yes"></script>
+                </div>
+            </div>
+            <div class="about-text">
+                <div class="title">
+                    <h2>جو دانشگاه</h2>
+                    <p></p>
+                </div>
+                <p>
+                    در این قسمت محاسبه ای داریم با توحید عابدینی در باره جو دانشگاه
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- end of about -->
+
+    <!-- footer -->
+    <footer style="margin-top: 5%;">
+        <div class="social-links">
+            <a href="#"><i class="fas fa-paper-plane"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <span>آشنایی با رشته و مهارت های دانشجویی</span>
+    </footer>
+    <!-- end of footer -->
+</body>
+
+</html>
